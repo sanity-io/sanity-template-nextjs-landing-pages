@@ -30,5 +30,18 @@
       }
     }
   ],
-  "fields": []
+  "metadata": {
+    "technologies": [
+      {
+        "id": "nextjs",
+        "name": "Next.js",
+        "url": "https://nextjs.org/"
+      },
+      {
+        "id": "netlify",
+        "name": "Netlify",
+        "url": "https://www.netlify.com/"
+      }
+    ]
+  }
 }
