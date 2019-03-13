@@ -1,0 +1,6 @@
+@import './custom-media.css';
+@import './custom-properties.css';
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}

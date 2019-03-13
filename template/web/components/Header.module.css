@@ -1,0 +1,82 @@
+@import "../styles/custom-media.css";
+
+.root {
+  position: relative;
+  background-color: var(--color-black, #000);
+  color: var(--color-white, #fff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+}
+
+.root a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.title {
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.title > a {
+  display: block;
+  padding: 1em 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navItems {
+  display: none;
+
+  @media (--media-min-medium) {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.navItem {
+  display: flex;
+  margin-left: 1em;
+  padding: 1em;
+  white-space: nowrap;
+}
+
+.navItem > a {
+  display: block;
+}
+
+.navItem > a[data-is-active="true"] {
+  color: red;
+}
+
+.hamburgerIcon {
+  font-size: 2em;
+  display: block;
+
+  @media (--media-min-medium) {
+    display: none;
+  }
+}
+
+.root[data-show-nav="true"] .navItems {
+  background-color: var(--color-black, #000);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

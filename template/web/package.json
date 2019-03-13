@@ -1,0 +1,29 @@
+{
+  "name": "landing-pages-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "preexport": "npm run build",
+    "export": "next export"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sanity/client": "^0.140.8",
+    "@zeit/next-css": "^1.0.1",
+    "next": "^8.0.3",
+    "next-seo": "^1.11.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "postcss-import": "^12.0.1",
+    "postcss-normalize": "^7.0.1",
+    "postcss-preset-env": "^6.6.0"
+  }
+}

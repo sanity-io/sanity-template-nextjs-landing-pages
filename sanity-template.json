@@ -2,6 +2,33 @@
   "version": 1,
   "title": "Next.js landing pages",
   "description": "An application for editing and rendering landing pages.",
-  "deployments": [],
+  "deployments": [
+    {
+      "type": "studio",
+      "title": "Content Studio",
+      "dir": "./studio",
+      "provider": {
+        "name": "netlify",
+        "config": {
+          "base": "studio",
+          "cmd": "npm run build",
+          "dir": "studio/dist"
+        }
+      }
+    },
+    {
+      "type": "web",
+      "title": "Frontend",
+      "dir": "./web",
+      "provider": {
+        "name": "netlify",
+        "config": {
+          "base": "web",
+          "cmd": "npm run build",
+          "dir": "web/public"
+        }
+      }
+    }
+  ],
   "fields": []
 }

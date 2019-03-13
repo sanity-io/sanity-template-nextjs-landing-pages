@@ -1,0 +1,28 @@
+{
+  "name": "templatenextjslandingpages",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "kristoffer sivertsen <kristoffer@sanity.io>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity start",
+    "test": "sanity check"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^0.140.9",
+    "@sanity/components": "^0.140.9",
+    "@sanity/core": "^0.140.9",
+    "@sanity/default-layout": "^0.140.9",
+    "@sanity/default-login": "^0.140.3",
+    "@sanity/desk-tool": "^0.140.9",
+    "prop-types": "^15.6",
+    "react": "^16.2",
+    "react-dom": "^16.2"
+  },
+  "devDependencies": {}
+}

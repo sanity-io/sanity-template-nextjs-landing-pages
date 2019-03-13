@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "project": {
+    "name": "<#< sanity.projectTitle >#>"
+  },
+  "api": {
+    "projectId": "pcgsfgel",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    },
+    {
+      "implements": "part:@sanity/desk-tool/structure",
+      "path": "./structure/default.js"
+    }
+  ]
+}
