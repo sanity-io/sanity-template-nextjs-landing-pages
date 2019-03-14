@@ -4,3 +4,7 @@
 html, body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+img {
+  max-width: 100%;
+}

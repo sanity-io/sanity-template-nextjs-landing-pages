@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default {
   type: 'object',
   name: 'hero',
@@ -8,12 +10,16 @@ export default {
       type: 'string',
       title: 'Heading'
     },
-    // {
-    //   name: 'tagline',
-    //   type: 'simpleBlockContent'
-    // },
+    {
+       name: 'tagline',
+       type: 'simpleBlockContent'
+    },
     {
       name: 'illustration',
+      type: 'image'
+    },
+    {
+      name: 'backgroundImage',
       type: 'image'
     },
     // {
@@ -27,12 +33,15 @@ export default {
   ],
   preview: {
       select: {
-        subtitle: 'heading'
+        heading: 'heading',
+        tagline: 'tagline',
+        media: 'backgroundImage'
       },
-      prepare({subtitle}) {
+      prepare({heading, tagline, media}) {
+        console.log(tagline)
         return {
-          title: 'Hero',
-          subtitle
+          title: `Hero: ${heading}`,
+          media: media
         }
       }
     }

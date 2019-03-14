@@ -10,7 +10,9 @@ class LandingPage extends React.Component {
     if (slug) {
       return client.fetch(`
         *[_type == "route" && slug.current == "${slug}"] {
-          page->
+          page-> {
+            ...
+          }
         }
       `).then(res => {
         return res[0].page
@@ -28,7 +30,7 @@ class LandingPage extends React.Component {
             description: 'A short description goes here.',
           }}
         />
-        {title && <h1>{title}</h1>}
+        {/* {title && <h1>{title}</h1>} */}
         {content && <RenderPlugs plugs={content} />}
       </Layout>
     )

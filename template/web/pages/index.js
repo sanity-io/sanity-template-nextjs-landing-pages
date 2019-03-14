@@ -36,7 +36,7 @@ class IndexPage extends React.Component {
                 {page.title}
                 <div>
                   <small>
-                    {routes.map(route => <Link href={{pathname: '/LandingPage', query: { slug: route.slug.current } }}><a>{route.slug.current}</a></Link>)}
+                    {routes.map(route => <Link key={route._id} href={{pathname: '/LandingPage', query: { slug: route.slug.current } }}><a>{route.slug.current}</a></Link>)}
                   </small>
                 </div>
               </li>)

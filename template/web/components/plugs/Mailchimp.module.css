@@ -1,0 +1,32 @@
+.root {
+  text-align: center;
+  padding: 2em;
+  position: relative;
+  background-color: #eee;
+}
+
+.email {
+  border: 4px solid blue;
+}
+
+.button {
+  border: 2px solid green;
+}
+
+.form {
+  display: flex;
+}
+
+.form input {
+  display: block;
+  border: 1px solid var(--color-black, #000);
+  flex-grow: 1;
+  padding: 1em;
+}
+
+.form button {
+  display: block;
+  padding: 1em;
+  border: 1px solid var(--color-black, #000);
+  margin-left: -1px;
+}

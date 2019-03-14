@@ -9,10 +9,12 @@ import page from './documents/page'
 import route from './documents/route'
 
 // Plugs
-import hero from './plugs/hero'
+import * as plugs from './plugs'
 
 // Types
 import siteConfig from './types/siteConfig'
+import blockContent from './types/blockContent'
+import simpleBlockContent from './types/simpleBlockContent'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,9 +24,8 @@ export default createSchema({
   types: schemaTypes.concat([
     page,
     route,
-    //plug
-    // Plugs
-    hero,
-    siteConfig
-  ])
+    siteConfig,
+    blockContent,
+    simpleBlockContent
+  ]).concat(Object.values(plugs))
 })

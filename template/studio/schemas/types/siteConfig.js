@@ -1,5 +1,5 @@
 export default {
-  type: 'document',
+  type: 'object',
   name: 'site-config',
   title: 'Site config',
   fields: [

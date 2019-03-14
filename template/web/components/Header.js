@@ -12,6 +12,11 @@ class Header extends React.PureComponent  {
     router.events.on('routeChangeComplete', this.hideMenu)
   }
 
+  componentWillUnmount() {
+    const {router} = this.props
+    router.events.off('routeChangeComplete', this.hideMenu)
+  }
+
   hideMenu = () => {
     this.setState({showNav: false})
   }

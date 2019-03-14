@@ -13,12 +13,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.140.8",
+    "@sanity/image-url": "^0.140.9",
     "@zeit/next-css": "^1.0.1",
+    "lodash": "^4.17.11",
     "next": "^8.0.3",
     "next-seo": "^1.11.1",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-mailchimp-form": "^1.0.1",
+    "react-mailchimp-subscribe": "^2.1.0"
   },
   "devDependencies": {
     "normalize.css": "^8.0.1",

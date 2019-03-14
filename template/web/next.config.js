@@ -1,8 +1,8 @@
-const client = require('./client')
-const query = `*[_type == "route"] { ..., page->{_id}}`
 const withCSS = require('@zeit/next-css')
+const client = require('./client')
 
 const isProduction = process.env.NODE_ENV === 'production'
+const query = `*[_type == "route"] { ..., page->{_id}}`
 
 module.exports = withCSS({
   cssModules: true,
@@ -13,8 +13,11 @@ module.exports = withCSS({
   exportPathMap: function () {
     return client.fetch(query).then(res => {
       const routes = {
+        // Index page
         '/': {page: '/'},
+        // Example of custom page
         '/custom-page': {page: '/CustomPage'},
+        // Routes imported from sanity
         ...res.filter(route => route.slug && route.slug.current).reduce((obj, route) => {
           obj[`/${route['slug']['current']}`] = {
             query: {
@@ -25,7 +28,6 @@ module.exports = withCSS({
           return obj
         }, {})
       }
-      console.log('routes', routes)
       return routes
     })
   }
