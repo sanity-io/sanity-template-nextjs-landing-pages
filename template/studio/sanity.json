@@ -4,8 +4,8 @@
     "name": "<#< sanity.projectTitle >#>"
   },
   "api": {
-    "projectId": "pcgsfgel",
-    "dataset": "production"
+    "projectId": "<#< sanity.projectId >#>",
+    "dataset": "<#< sanity.dataset >#>"
   },
   "plugins": [
     "@sanity/base",

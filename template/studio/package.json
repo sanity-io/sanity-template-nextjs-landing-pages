@@ -1,18 +1,13 @@
 {
-  "name": "templatenextjslandingpages",
   "private": true,
+  "name": "<#< repository.name >#>-studio",
   "version": "1.0.0",
-  "description": "",
   "main": "package.json",
-  "author": "kristoffer sivertsen <kristoffer@sanity.io>",
-  "license": "UNLICENSED",
+  "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "dev": "sanity start",
     "test": "sanity check"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
     "@sanity/base": "^0.140.9",
     "@sanity/components": "^0.140.9",

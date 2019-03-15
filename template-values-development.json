@@ -1,0 +1,38 @@
+{
+  "repository": {
+    "name": "dev-sanity-nextjs-landing-pages",
+    "owner": "mariuslundgard",
+    "private": false
+  },
+  "sanity": {
+    "dataset": "development",
+    "projectId": "pcgsfgel",
+    "projectTitle": "Next.js landing pages (dev)"
+  },
+  "user": {
+    "displayName": "Marius Lundgård",
+    "profileImage": "https://lh3.googleusercontent.com/-a67P3TV8b5g/AAAAAAAAAAI/AAAAAAAAADI/LGBX1ZAjh88/photo.jpg",
+    "email": "marius@sanity.io"
+  },
+  "userInput": {},
+  "deployments": [
+    {
+      "url": "http://sanity-gatsby-blog-studio-mikmcw27.netlify.com/",
+      "name": "Studio",
+      "provider": {
+        "name": "netlify",
+        "buildHookId": "5c8b6098f5513cfa270c2c81",
+        "siteId": "811138dd-635a-4982-8d4f-717dcc6877ba"
+      }
+    },
+    {
+      "url": "http://sanity-gatsby-blog-web-vce5ru3w.netlify.com/",
+      "name": "Frontend",
+      "provider": {
+        "name": "netlify",
+        "buildHookId": "5c8b6053b627006dc3e7ecf2",
+        "siteId": "c733d053-2a2f-4e63-b290-57bbb5ae1577"
+      }
+    }
+  ]
+}

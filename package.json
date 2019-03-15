@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "sanity-template-nextjs-landing-pages",
+  "scripts": {
+    "build": "sanity-template build --template-values template-values-production.json",
+    "dev": "sanity-template watch --template-values template-values-development.json",
+    "copy-node-modules": "npm run copy-studio-node-modules && npm run copy-web-node-modules",
+    "copy-studio-node-modules": "cp -R build/studio/node_modules template/studio/node_modules",
+    "copy-web-node-modules": "cp -R build/web/node_modules template/web/node_modules",
+    "export": "cd build/studio && sanity dataset export production ../../data/production.tar.gz"
+  },
+  "devDependencies": {
+    "sanity-template-tools": "^1.0.0-alpha.0"
+  }
+}
