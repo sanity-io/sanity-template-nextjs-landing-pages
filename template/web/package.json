@@ -5,10 +5,8 @@
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "preexport": "npm run build",
-    "export": "next export"
+    "build": "next build && next export",
+    "start": "next start"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",

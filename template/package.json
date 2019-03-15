@@ -3,6 +3,7 @@
   "name": "<#< repository.name >#>",
   "version": "1.0.0",
   "scripts": {
+    "build": "lerna run build --parallel",
     "dev": "lerna run dev --parallel",
     "format": "lerna run format",
     "graphql-deploy": "lerna run graphql-deploy",
