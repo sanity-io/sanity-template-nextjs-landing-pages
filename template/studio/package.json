@@ -5,6 +5,7 @@
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
+    "build": "sanity build",
     "dev": "sanity start",
     "test": "sanity check"
   },
