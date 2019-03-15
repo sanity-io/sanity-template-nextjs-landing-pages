@@ -16,5 +16,16 @@ export default {
       name: 'actionUrl',
       type: 'string'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      heading: 'heading'
+    },
+    prepare({heading}) {
+      return {
+        title: heading,
+        subtitle: 'Mailchimp newsletter signup plug'
+      }
+    }
+  }
 }

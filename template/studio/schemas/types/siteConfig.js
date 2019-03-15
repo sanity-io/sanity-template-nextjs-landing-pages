@@ -2,6 +2,9 @@ export default {
   type: 'object',
   name: 'site-config',
   title: 'Site config',
+  fieldsets: [
+    {name: 'footer', title: 'Footer'}
+  ],
   fields: [
     {
       title: 'Site title',
@@ -21,28 +24,26 @@ export default {
         {
           type: 'reference',
           to: [{type: 'route'}]
-        },
-        // {
-        //   title: 'Collection',
-        //   type: 'object',
-        //   fields: [
-        //     {
-        //       name: 'title',
-        //       type: 'string'
-        //     },
-        //     {
-        //       name: 'items',
-        //       type: 'array',
-        //       of: [
-        //         {
-        //           type: 'reference',
-        //           to: [{type: 'route'}]
-        //         }
-        //       ]
-        //     }
-        //   ]
-        // }
+        }
       ]
+    },
+    {
+      title: 'Footer navigation items',
+      name: 'footerNavigation',
+      type: 'array',
+      fieldset: 'footer',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'route'}]
+        }
+      ]
+    },
+    {
+      name: 'footerText',
+      name: 'footerText',
+      type: 'simpleBlockContent',
+      fieldset: 'footer'
     }
   ]
 }

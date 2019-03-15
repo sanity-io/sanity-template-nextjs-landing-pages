@@ -15,6 +15,7 @@ import * as plugs from './plugs'
 import siteConfig from './types/siteConfig'
 import blockContent from './types/blockContent'
 import simpleBlockContent from './types/simpleBlockContent'
+import cta from './types/cta'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,6 +27,7 @@ export default createSchema({
     route,
     siteConfig,
     blockContent,
-    simpleBlockContent
+    simpleBlockContent,
+    cta
   ]).concat(Object.values(plugs))
 })

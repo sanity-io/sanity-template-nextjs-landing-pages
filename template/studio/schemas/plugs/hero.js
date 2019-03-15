@@ -15,34 +15,29 @@ export default {
        type: 'simpleBlockContent'
     },
     {
-      name: 'illustration',
-      type: 'image'
-    },
-    {
       name: 'backgroundImage',
       type: 'image'
     },
-    // {
-    //   name: 'ctas',
-    //   type: 'array',
-    //   of: [{
-    //     name: 'cta',
-    //     type: 'cta'
-    //   }]
-    // }
+    {
+      name: 'ctas',
+      type: 'array',
+      of: [{
+        name: 'cta',
+        type: 'cta'
+      }]
+    }
   ],
   preview: {
-      select: {
-        heading: 'heading',
-        tagline: 'tagline',
-        media: 'backgroundImage'
-      },
-      prepare({heading, tagline, media}) {
-        console.log(tagline)
-        return {
-          title: `Hero: ${heading}`,
-          media: media
-        }
+    select: {
+      heading: 'heading',
+      media: 'backgroundImage'
+    },
+    prepare({heading, media}) {
+      return {
+        title: heading,
+        subtitle: 'Hero plug',
+        media: media
       }
     }
+  }
 }

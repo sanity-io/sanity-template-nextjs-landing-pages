@@ -16,5 +16,16 @@ export default {
       name: 'text',
       type: 'blockContent'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      heading: 'heading'
+    },
+    prepare({heading}) {
+      return {
+        title: `${heading}`,
+        subtitle: 'Text plug'
+      }
+    }
+  }
 }
