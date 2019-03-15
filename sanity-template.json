@@ -31,7 +31,7 @@
       "provider": {
         "name": "netlify",
         "config": {
-          "cmd": "npm run export",
+          "cmd": "npm run build",
           "dir": "web/out"
         }
       }
