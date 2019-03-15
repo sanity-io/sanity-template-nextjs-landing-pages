@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "sanity-template-nextjs-landing-pages",
-  "version": "0.0.0",
+  "name": "<#< repository.name >#>",
+  "version": "1.0.0",
   "scripts": {
     "dev": "lerna run dev --parallel",
     "format": "lerna run format",
