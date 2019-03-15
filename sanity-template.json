@@ -4,6 +4,7 @@
   "description": "An application for editing and rendering landing pages.",
   "deployments": [
     {
+      "id": "studio",
       "type": "studio",
       "title": "Content Studio",
       "dir": "./studio",
@@ -11,19 +12,25 @@
         "name": "netlify",
         "config": {
           "base": "studio",
-          "cmd": "npm run build",
+          "cmd": "npm run build && cp ./netlify.toml dist",
           "dir": "studio/dist"
         }
       }
     },
     {
+      "id": "web",
       "type": "web",
       "title": "Frontend",
       "dir": "./web",
+      "requiredTokens": [
+        {
+          "role": "deploy-studio",
+          "label": "GraphQL API Deployer"
+        }
+      ],
       "provider": {
         "name": "netlify",
         "config": {
-          "base": "web",
           "cmd": "npm run build",
           "dir": "web/public"
         }
