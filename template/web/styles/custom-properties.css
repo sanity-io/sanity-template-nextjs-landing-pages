@@ -2,4 +2,6 @@
   --color-black: #222;
   --color-white: #fff;
   --color-accent: #f43;
+  --wide-container: 60rem;
+  --narrow-container: 40rem;
 }

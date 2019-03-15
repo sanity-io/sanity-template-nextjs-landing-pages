@@ -11,7 +11,18 @@ class LandingPage extends React.Component {
       return client.fetch(`
         *[_type == "route" && slug.current == "${slug}"] {
           page-> {
-            ...
+            ...,
+            content[] {
+              ...,
+              cta {
+                ...,
+                route->
+              },
+              ctas[] {
+                ...,
+                route->
+              }
+            }
           }
         }
       `).then(res => {

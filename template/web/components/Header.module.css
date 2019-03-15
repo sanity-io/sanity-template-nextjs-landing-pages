@@ -7,8 +7,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 1em;
+  padding: 0 1em;
   box-sizing: border-box;
+
+  @supports (padding-top: env(safe-area-inset-top)) {
+    padding-left: calc(env(safe-area-inset-left) + 1em);
+    padding-right: calc(env(safe-area-inset-right) + 1em);
+  }
 }
 
 .root a {
@@ -31,7 +36,6 @@
 
 .nav {
   display: flex;
-  align-items: center;
 }
 
 .navItems {
@@ -48,21 +52,34 @@
 .navItem {
   display: flex;
   margin-left: 1em;
-  padding: 1em;
   white-space: nowrap;
+  align-items: stretch;
 }
 
 .navItem > a {
-  display: block;
+  display: flex;
+  position: relative;
+  height: 100%;
+  padding: 1em;
+  box-sizing: border-box;
 }
 
-.navItem > a[data-is-active="true"] {
-  color: red;
+.navItem > a[data-is-active="true"]::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid currentColor;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
 }
 
 .hamburgerIcon {
   font-size: 2em;
   display: block;
+  margin-left: 1em;
 
   @media (--media-min-medium) {
     display: none;
@@ -70,6 +87,7 @@
 }
 
 .root[data-show-nav="true"] .navItems {
+  z-index: 10;
   background-color: var(--color-black, #000);
   display: block;
   position: absolute;

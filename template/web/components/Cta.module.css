@@ -1,0 +1,21 @@
+.button {
+  color: inherit;
+  display: block;
+  border-radius: 0;
+  border: 1px solid currentColor;
+  background-color: transparent;
+  padding: 1em;
+  text-decoration: inherit;
+  font-weight: 500;
+  max-width: fit-content;
+  transition: transform 50ms ease-in-out;
+  transform: scale(1);
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}

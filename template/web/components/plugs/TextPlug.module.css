@@ -1,5 +1,22 @@
 .root {
-  max-width: 30em;
-  margin: 0 auto;
-  padding: 0 1em;
+  composes: center from '../../styles/shared.module.css';
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.article {
+  composes: narrow-container from '../../styles/shared.module.css';
+  width: 100%;
+}
+
+.label {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin-top: 1em;
+}
+
+.heading {}
+
+.label + .heading {
+  margin-top: 0.2em;
 }

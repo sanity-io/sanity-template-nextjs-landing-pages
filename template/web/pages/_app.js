@@ -2,12 +2,14 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import client from '../client'
 import 'normalize.css'
+import "../styles/shared.module.css"
 import "../styles/layout.css"
 
 const siteConfigQuery = `
   *[_id == "global-config"] {
     ...,
-    mainNavigation[]->
+    mainNavigation[]->,
+    footerNavigation[]->
   }[0]
 `
 

@@ -1,0 +1,43 @@
+@import "../../styles/custom-media.css";
+
+.root {
+  composes: center from '../../styles/shared.module.css';
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.label {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin-top: 1em;
+}
+
+.label + .title {
+  margin-top: 0.2em;
+}
+
+.content {
+  composes: normal-container from '../../styles/shared.module.css';
+  margin-top: 2em;
+
+  @media (--media-min-medium) {
+    margin-top: 10em;
+  }
+}
+
+.caption {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 1rem;
+  margin: 1rem;
+  transform: translateY(-4rem);
+
+  @media (--media-min-medium) {
+    position: absolute;
+    top: 5rem;
+    left: calc(50vw - var(--narrow-container) / 2);
+    max-width: 20rem;
+    margin: 0;
+  }
+}
