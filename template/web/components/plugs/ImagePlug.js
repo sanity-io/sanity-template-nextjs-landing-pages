@@ -13,7 +13,10 @@ function urlFor(source) {
 
 export default function Hero(props) {
   const {heading, label, text, image, cta} = props
-  console.log(props)
+
+  if (!image) {
+    return null
+  }
 
   return (
     <div className={styles.root}>
@@ -22,7 +25,7 @@ export default function Hero(props) {
         <div className={styles.caption}>
           <div className={styles.label}>{label}</div>
           <h2 className={styles.title}>{heading}</h2>
-          <SimpleBlockContent blocks={text} />
+          {text && <SimpleBlockContent blocks={text} />}
           {
             cta && cta.route && <Cta {...cta} />
           }
