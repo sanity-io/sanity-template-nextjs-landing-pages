@@ -9,7 +9,7 @@ export default function TextPlug(props) {
       <article className={styles.article}>
         <div className={styles.label}>{label}</div>
         <h2 className={styles.heading}>{heading}</h2>
-        <SimpleBlockContent blocks={text} />
+        {text && <SimpleBlockContent blocks={text} />}
       </article>
     </div>
   )

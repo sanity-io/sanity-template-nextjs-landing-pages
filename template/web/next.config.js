@@ -16,7 +16,6 @@ module.exports = withCSS({
   },
   exportPathMap: function () {
     return client.fetch(query).then(res => {
-      console.log('frontpage', res.frontpage)
       const routes = {
         // Index page from gobal-config
         '/': {
