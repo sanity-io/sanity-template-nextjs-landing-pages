@@ -8,21 +8,29 @@ import "../styles/layout.css"
 const siteConfigQuery = `
   *[_id == "global-config"] {
     ...,
-    mainNavigation[]->,
-    footerNavigation[]->
+    mainNavigation[] ->,
+    footerNavigation[] ->
   }[0]
-`
+  `
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
+
     let pageProps = {}
+
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
     }
 
     // Add site config from sanity
     return client.fetch(siteConfigQuery).then(config => {
-      pageProps.config = config
+      if (!config) {
+        return {pageProps}
+      }
+      if (config && pageProps) {
+        pageProps.config = config
+      }
+
       return { pageProps }
     })
   }

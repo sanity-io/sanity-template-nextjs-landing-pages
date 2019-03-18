@@ -60,3 +60,7 @@
 .ctas > *:not(:first-child) {
   margin-left: 1rem;
 }
+
+.root p a {
+  color: inherit;
+}

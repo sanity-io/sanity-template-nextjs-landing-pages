@@ -2,7 +2,11 @@ const withCSS = require('@zeit/next-css')
 const client = require('./client')
 
 const isProduction = process.env.NODE_ENV === 'production'
-const query = `*[_type == "route"] { ..., page->{_id}}`
+const query = `
+{
+  "routes": *[_type == "route"] { ..., page->{_id}}
+}
+`
 
 module.exports = withCSS({
   cssModules: true,
@@ -12,13 +16,18 @@ module.exports = withCSS({
   },
   exportPathMap: function () {
     return client.fetch(query).then(res => {
+      console.log('frontpage', res.frontpage)
       const routes = {
-        // Index page
-        '/': {page: '/'},
-        // Example of custom page
+        // Index page from gobal-config
+        '/': {
+          page: '/LandingPage',
+          query: {
+            slug: '/'
+          }
+        },
         '/custom-page': {page: '/CustomPage'},
         // Routes imported from sanity
-        ...res.filter(route => route.slug && route.slug.current).reduce((obj, route) => {
+        ...res.routes.filter(route => route.slug && route.slug.current).reduce((obj, route) => {
           obj[`/${route['slug']['current']}`] = {
             query: {
               slug: route.slug.current

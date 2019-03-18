@@ -33,7 +33,12 @@ class Header extends React.PureComponent  {
       <div className={styles.root} data-show-nav={this.state.showNav}>
         <h1 className={styles.title}>
           <Link
-            href={{ pathname: '/'}}
+            href={{
+              pathname: '/LandingPage',
+              query: {
+                slug: '/'
+              }
+            }}
             as={`/`}
             prefetch
           >

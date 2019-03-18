@@ -12,6 +12,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'frontpage',
+      type: 'reference',
+      to: {type: 'page'}
+    },
+    {
       title: 'Brand logo',
       name: 'logo',
       type: 'image'

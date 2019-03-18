@@ -8,6 +8,7 @@ import Footer from './Footer'
 export default function Layout(props) {
   const {config} = props
   if (!config) {
+    console.error('Missing config')
     return <div>Missing config</div>
   }
   const {title, mainNavigation, footerNavigation, footerText} = config
