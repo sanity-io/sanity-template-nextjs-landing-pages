@@ -12,6 +12,12 @@ export default {
       type: 'string'
     },
     {
+      title: 'URL',
+      name: 'url',
+      type: 'url',
+      description: 'The main site url. Used to create canonical url'
+    },
+    {
       name: 'frontpage',
       type: 'reference',
       to: {type: 'page'}
