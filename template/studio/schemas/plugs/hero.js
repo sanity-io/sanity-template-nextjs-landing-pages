@@ -16,7 +16,10 @@ export default {
     },
     {
       name: 'backgroundImage',
-      type: 'image'
+      type: 'image',
+      options: {
+        hotspot: true
+      }
     },
     {
       name: 'ctas',

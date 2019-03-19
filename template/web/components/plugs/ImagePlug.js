@@ -7,10 +7,6 @@ import imageUrlBuilder from '@sanity/image-url'
 
 const builder = imageUrlBuilder(client)
 
-function urlFor(source) {
-  return builder.image(source)
-}
-
 export default function Hero(props) {
   const {heading, label, text, image, cta} = props
 
@@ -21,7 +17,7 @@ export default function Hero(props) {
   return (
     <div className={styles.root}>
       <figure className={styles.content}>
-        <img src={urlFor(image.asset)} className={styles.image} />
+        <img src={builder.image(image.asset).width(2000).url()} className={styles.image} />
         <div className={styles.caption}>
           <div className={styles.label}>{label}</div>
           <h2 className={styles.title}>{heading}</h2>
