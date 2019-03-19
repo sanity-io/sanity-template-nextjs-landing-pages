@@ -98,6 +98,7 @@ class LandingPage extends React.Component {
         <NextSeo
           config={{
             title: title,
+            titleTemplate: `${config.title} | %s`,
             description,
             canonical: config.url && `${config.url}/${slug}`,
             openGraph: {
