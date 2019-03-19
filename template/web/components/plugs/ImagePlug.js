@@ -17,7 +17,7 @@ export default function Hero(props) {
   return (
     <div className={styles.root}>
       <figure className={styles.content}>
-        <img src={builder.image(image.asset).width(2000).url()} className={styles.image} />
+        <img src={builder.image(image).width(2000).url()} className={styles.image} />
         <div className={styles.caption}>
           <div className={styles.label}>{label}</div>
           <h2 className={styles.title}>{heading}</h2>
