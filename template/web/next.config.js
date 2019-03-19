@@ -4,7 +4,7 @@ const client = require('./client')
 const isProduction = process.env.NODE_ENV === 'production'
 const query = `
 {
-  "routes": *[_type == "route"] { ..., page->{_id}}
+  "routes": *[_type == "route"] { ..., page->{_id, title}}
 }
 `
 

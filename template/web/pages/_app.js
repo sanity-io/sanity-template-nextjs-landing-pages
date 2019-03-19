@@ -8,7 +8,10 @@ import "../styles/layout.css"
 const siteConfigQuery = `
   *[_id == "global-config"] {
     ...,
-    mainNavigation[] ->,
+    mainNavigation[] -> {
+      ...,
+      "title": page->title
+    },
     footerNavigation[] ->
   }[0]
   `
