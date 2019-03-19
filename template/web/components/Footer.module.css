@@ -3,7 +3,7 @@
   color: var(--color-white, #fff);
   composes: center from '../styles/shared.module.css';
   font-size: 0.8em;
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 
 .nav {
@@ -19,19 +19,22 @@
   color: inherit;
 }
 
-ul.items {
-  display: block;
+.items {
+  display: flex;
   margin: 0;
-  column-count: 3;
-  column-gap: 1rem;
-  column-width: 10rem;
 }
 
 .item {
+  display: list-item;
+  margin-left: 1.8em;
+}
+
+.item:first-child {
   display: block;
 }
 
 .text {
   text-align: center;
   margin-bottom: 2rem;
+  opacity: 0.5;
 }
