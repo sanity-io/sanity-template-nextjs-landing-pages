@@ -13,7 +13,10 @@ const siteConfigQuery = `
       ...,
       "title": page->title
     },
-    footerNavigation[] ->
+    footerNavigation[] -> {
+      ...,
+      "title": page->title
+    }
   }[0]
   `
 
