@@ -14,7 +14,7 @@ function urlFor(source) {
 export default function Hero(props) {
   const {heading, backgroundImage, tagline, ctas} = props
 
-  const style = backgroundImage ? {backgroundImage: `url("${urlFor(backgroundImage)}")`} : {}
+  const style = backgroundImage ? {backgroundImage: `url("${urlFor(backgroundImage).width(2000).url()}")`} : {}
 
   return (
     <div className={styles.root} style={style}>
