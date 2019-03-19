@@ -5,7 +5,7 @@
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
+    "build": "next build && next export && node exportSitemap.js",
     "start": "next start"
   },
   "dependencies": {
@@ -23,9 +23,11 @@
     "react-mailchimp-subscribe": "^2.1.0"
   },
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "normalize.css": "^8.0.1",
     "postcss-import": "^12.0.1",
     "postcss-normalize": "^7.0.1",
-    "postcss-preset-env": "^6.6.0"
+    "postcss-preset-env": "^6.6.0",
+    "sitemap": "^2.1.0"
   }
 }
