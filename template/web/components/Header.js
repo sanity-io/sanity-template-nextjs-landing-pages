@@ -55,7 +55,7 @@ class Header extends React.PureComponent  {
             as={`/`}
             prefetch
           >
-            <a>
+            <a title={title}>
               {this.renderLogo(logo)}
             </a>
           </Link>
