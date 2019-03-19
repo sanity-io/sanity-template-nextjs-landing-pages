@@ -1,18 +1,16 @@
 @import './custom-media.css';
 @import './custom-properties.css';
 
-@custom-media --breakpoint (min-width: 51rem);
-
 .center {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .container {
   margin: 0 1rem;
 
-  @media (--breakpoint) {
+  @media (--typography-breakpoint) {
     margin: 0;
     width: 100%;
   }
@@ -21,7 +19,7 @@
 .normal-container {
   composes: container;
 
-  @media (--breakpoint) {
+  @media (--typography-breakpoint) {
     max-width: var(--wide-container, 60rem);
   }
 }
@@ -29,7 +27,7 @@
 .narrow-container {
   composes: container;
 
-  @media (--breakpoint) {
+  @media (--typography-breakpoint) {
     max-width: var(--narrow-container, 30rem);
   }
 }

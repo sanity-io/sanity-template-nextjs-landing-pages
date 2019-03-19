@@ -17,11 +17,15 @@
   margin-top: 0.2em;
 }
 
+.image {
+  display: block;
+}
+
 .content {
   composes: normal-container from '../../styles/shared.module.css';
   margin-top: 2em;
 
-  @media (--media-min-medium) {
+  @media (--typography-breakpoint) {
     margin-top: 10em;
   }
 }
@@ -30,10 +34,10 @@
   background-color: #fff;
   border: 1px solid #000;
   padding: 1rem;
-  margin: 1rem;
-  transform: translateY(-4rem);
 
-  @media (--media-min-medium) {
+
+  @media (--typography-breakpoint) {
+    transform: translateY(-4rem);
     position: absolute;
     top: 5rem;
     left: calc(50vw - var(--narrow-container) / 2);
