@@ -37,7 +37,7 @@ class LandingPage extends React.Component {
           }
         }
       `).then(res => {
-        return res[0].page
+        return {...res[0].page, slug}
       })
     }
 
@@ -50,7 +50,7 @@ class LandingPage extends React.Component {
           }
         }[0]
       `).then(res => {
-        return res.frontpage
+        return {...res.frontpage, slug}
       })
     }
 
@@ -65,7 +65,8 @@ class LandingPage extends React.Component {
       disallowRobots,
       openGraphImage,
       content = [],
-      config = {}
+      config = {},
+      slug
     } = this.props
 
     const openGraphImages =
@@ -98,6 +99,7 @@ class LandingPage extends React.Component {
           config={{
             title: title,
             description,
+            canonical: config.url && `${config.url}/${slug}`,
             openGraph: {
               images: openGraphImages,
             },
