@@ -11,7 +11,7 @@ export default function Layout(props) {
     console.error('Missing config')
     return <div>Missing config</div>
   }
-  const {title, mainNavigation, footerNavigation, footerText, logo} = config
+  const {title, mainNavigation, footerNavigation, footerText, logo, url} = config
   const logoUrl = logo && logo.asset && logo.asset.url
   return (
     <div>
@@ -22,7 +22,7 @@ export default function Layout(props) {
         <Header title={title} navItems={mainNavigation} logo={logo} />
         {props.children}
         <Footer navItems={footerNavigation} text={footerText} />
-        {logoUrl && <LogoJsonLd url={logoUrl} />}
+        {(logoUrl && url) && <LogoJsonLd url={url} logo={logoUrl} />}
       </div>
     </div>
   )
