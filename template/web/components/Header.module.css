@@ -34,6 +34,17 @@
   padding: 1em 0;
 }
 
+.title img,
+.title svg {
+  height: 2em;
+  width: auto;
+  color: inherit;
+}
+
+.logo {
+  display: block;
+}
+
 .nav {
   display: flex;
 }

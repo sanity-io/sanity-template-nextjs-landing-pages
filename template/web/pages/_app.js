@@ -8,6 +8,7 @@ import "../styles/layout.css"
 const siteConfigQuery = `
   *[_id == "global-config"] {
     ...,
+    logo {asset->{extension, url}},
     mainNavigation[] -> {
       ...,
       "title": page->title

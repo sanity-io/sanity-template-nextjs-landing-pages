@@ -3,6 +3,7 @@ import Link from  'next/link'
 import styles from './Header.module.css'
 import HamburgerIcon from './icons/Hamburger'
 import { withRouter } from 'next/router'
+import SVG from 'react-inlinesvg'
 
 class Header extends React.PureComponent  {
   state = { showNav: false }
@@ -27,8 +28,20 @@ class Header extends React.PureComponent  {
       showNav: !showNav
     })
   }
+
+  renderLogo = logo => {
+    if (!logo || !logo.asset) {
+      return null
+    }
+    if (logo.asset.extension === 'svg') {
+      return <SVG src={logo.asset.url} className={styles.logo} />
+    }
+    return  <img src={logo.asset.url} alt={title} className={styles.logo} />
+  }
+
   render() {
-    const {title = 'Missing title', navItems, router} = this.props
+    const {title = 'Missing title', navItems, router, logo} = this.props
+
     return (
       <div className={styles.root} data-show-nav={this.state.showNav}>
         <h1 className={styles.title}>
@@ -42,7 +55,9 @@ class Header extends React.PureComponent  {
             as={`/`}
             prefetch
           >
-            <a>{title}</a>
+            <a>
+              {this.renderLogo(logo)}
+            </a>
           </Link>
         </h1>
         <nav className={styles.nav}>
