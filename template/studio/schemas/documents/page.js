@@ -51,6 +51,12 @@ export default {
       name: 'disallowRobots',
       type: 'boolean',
       fieldset: 'metadata'
+    },
+    {
+      title: 'Open Graph Image',
+      name: 'openGraphImage',
+      type: 'image',
+      fieldset: 'metadata'
     }
   ],
 
