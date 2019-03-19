@@ -1,3 +1,4 @@
+import bcp47 from 'bcp47'
 export default {
   type: 'object',
   name: 'site-config',
@@ -21,6 +22,15 @@ export default {
       name: 'frontpage',
       type: 'reference',
       to: {type: 'page'}
+    },
+    {
+      title: 'Site language',
+      description: 'Shuld be a valid bcp47 language code like en, en-US, no or nb-NO',
+      name: 'lang',
+      type: 'string',
+      validation: Rule => Rule.custom(lang => {
+        return bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
+      })
     },
     {
       title: 'Brand logo',
