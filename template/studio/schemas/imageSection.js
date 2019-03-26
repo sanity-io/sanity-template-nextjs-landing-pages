@@ -1,45 +1,46 @@
 export default {
   type: 'object',
-  name: 'imagePlug',
+  name: 'imageSection',
   title: 'Image with text',
   fields: [
     {
       name: 'heading',
       type: 'string',
-      title: 'Heading'
+      title: 'Heading',
     },
     {
       name: 'label',
-      type: 'string'
+      type: 'string',
+      title: 'Label'
     },
     {
       name: 'text',
-      type: 'simpleBlockContent'
+      type: 'simplePortableText',
+      title: 'Text'
     },
     {
       name: 'image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
+      type: 'figure',
+      title: 'Image'
     },
     {
       name: 'cta',
-      type: 'cta'
-    }
+      type: 'cta',
+      title: 'Call to action'
+    },
   ],
   preview: {
     select: {
       heading: 'heading',
       subtitle: 'label',
-      media: 'image'
+      media: 'image',
     },
-    prepare({heading, media}) {
+    prepare({ heading, media }) {
       return {
         title: `Image: ${heading}`,
         subtitle: 'Image plug',
-        media
-      }
-    }
-  }
-}
+        media,
+      };
+    },
+  },
+};
