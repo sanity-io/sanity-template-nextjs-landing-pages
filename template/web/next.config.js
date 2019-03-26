@@ -17,44 +17,52 @@ const query = `
   }}
 }
 `
+const reduceRoutes = (obj, route) => {
+  const { page = {}, slug = {} } = route
+  const { includeInSitemap, disallowRobot, _createdAt, _updatedAt } = page
+  obj[`/${route['slug']['current']}`] = {
+    query: {
+      slug: slug.current
+    },
+    includeInSitemap,
+    disallowRobot,
+    _createdAt,
+    _updatedAt,
+    page: '/LandingPage'
+  }
+  return obj
+}
 
 module.exports = withCSS({
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
-    localIdentName: isProduction ? "[hash:base64:5]" : "[name]__[local]___[hash:base64:5]",
+    localIdentName: isProduction
+      ? '[hash:base64:5]'
+      : '[name]__[local]___[hash:base64:5]'
   },
-  exportPathMap: function () {
+  exportPathMap: function() {
     return client.fetch(query).then(res => {
-      const routes = {
+      const { frontpage = {}, routes = [] } = res
+      const { includeInSitemap, disallowRobot, _updatedAt } = frontpage
+      const nextRoutes = {
         // Index page from gobal-config
         '/': {
           page: '/LandingPage',
-          includeInSitemap: res.frontpage.includeInSitemap,
-          disallowRobot: res.frontpage.disallowRobot,
-          _updatedAt: res.frontpage._updatedAt,
+          includeInSitemap,
+          disallowRobot,
+          _updatedAt,
           query: {
             slug: '/'
           }
         },
-        '/custom-page': {page: '/CustomPage'},
+        '/custom-page': { page: '/CustomPage' },
         // Routes imported from sanity
-        ...res.routes.filter(route => route.slug && route.slug.current).reduce((obj, route) => {
-          const {includeInSitemap, disallowRobot, _createdAt, _updatedAt} = route.page
-          obj[`/${route['slug']['current']}`] = {
-            query: {
-              slug: route.slug.current
-            },
-            includeInSitemap,
-            disallowRobot,
-            _createdAt,
-            _updatedAt,
-            page: '/LandingPage'
-          }
-          return obj
-        }, {})
+        ...routes
+          .filter(({slug}) => slug.current)
+          .reduce(reduceRoutes, {})
       }
-      return routes
+      return nextRoutes
     })
   }
 })

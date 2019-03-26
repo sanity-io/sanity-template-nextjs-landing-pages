@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import NextSeo from 'next-seo';
+import Link from 'next/link'
 import Layout from '../components/Layout'
 import client from '../client'
-import Link from 'next/link'
 
 class IndexPage extends React.Component {
-  static async getInitialProps({query, params}) {
+  static async getInitialProps({ query, params }) {
     return client.fetch(`
       {
         "pages":
@@ -14,10 +14,11 @@ class IndexPage extends React.Component {
             "routes": *[_type == "route" && references(^._id)]
           }
       }
-    `)
+    `);
   }
+
   render() {
-    const {config, pages} = this.props
+    const { config, pages } = this.props;
     return (
       <Layout config={config}>
         <NextSeo
@@ -30,21 +31,32 @@ class IndexPage extends React.Component {
         <h2>Pages</h2>
         <ul>
           {pages.map(page => {
-            const {routes = []} = page
+            const { routes = [] } = page;
             return (
               <li key={page._id}>
                 {page.title}
                 <div>
                   <small>
-                    {routes.map(route => <Link key={route._id} href={{pathname: '/LandingPage', query: { slug: route.slug.current } }}><a>{route.slug.current}</a></Link>)}
+                    {routes.map(route => (
+                      <Link
+                        key={route._id}
+                        href={{
+                          pathname: '/LandingPage',
+                          query: { slug: route.slug.current },
+                        }}
+                      >
+                        <a>{route.slug.current}</a>
+                      </Link>
+                    ))}
                   </small>
                 </div>
-              </li>)
+              </li>
+            );
           })}
         </ul>
       </Layout>
-    )
+    );
   }
 }
 
-export default IndexPage
+export default IndexPage;
