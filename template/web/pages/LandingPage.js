@@ -1,117 +1,142 @@
-import React from 'react'
+import React, { Component } from 'react';
 import NextSeo from 'next-seo';
-import Layout from '../components/Layout'
-import client from '../client'
-import RenderPlugs from '../components/RenderPlugs'
-import imageUrlBuilder from '@sanity/image-url'
+import groq from 'groq';
+import imageUrlBuilder from '@sanity/image-url';
+import Layout from '../components/Layout';
+import client from '../client';
+import RenderSections from '../components/RenderSections';
 
-const builder = imageUrlBuilder(client)
-
-const pageSubQuery = `
-  ...,
-  content[] {
+const builder = imageUrlBuilder(client);
+const pageQuery = groq`
+*[_type == "route" && slug.current == $slug][0]{
+  page-> {
     ...,
-    cta {
+    content[] {
       ...,
-      route->
-    },
-    ctas[] {
-      ...,
-      route->
+      cta {
+        ...,
+        route->
+      },
+      ctas[] {
+        ...,
+        route->
+      }
     }
   }
-`
+}
+`;
 
-class LandingPage extends React.Component {
-  static async getInitialProps({query}) {
-    const {slug} = query
+class LandingPage extends Component {
+  static async getInitialProps({ query }) {
+    const { slug } = query;
     if (!query) {
-      console.error('no query')
-      return
+      console.error('no query');
+      return;
     }
     if (slug && slug !== '/') {
-      return client.fetch(`
-        *[_type == "route" && slug.current == "${slug}"] {
-          page-> {
-            ${pageSubQuery}
-          }
-        }
-      `).then(res => {
-        return {...res[0].page, slug}
-      })
+      return client
+        .fetch(pageQuery, { slug })
+        .then(res => ({ ...res.page, slug }));
     }
 
     // Frontpage
     if (slug && slug === '/') {
-      return client.fetch(`
-        *[_id == "global-config"] {
+      return client
+        .fetch(
+          groq`
+        *[_id == "global-config"][0]{
           frontpage -> {
-            ${pageSubQuery}
+            page-> {
+              ...,
+              content[] {
+                ...,
+                cta {
+                  ...,
+                  route->
+                },
+                ctas[] {
+                  ...,
+                  route->
+                }
+              }
+            }
           }
-        }[0]
-      `).then(res => {
-        return {...res.frontpage, slug}
-      })
+        }
+      `
+        )
+        .then(res => ({ ...res.frontpage, slug }));
     }
 
-    return null
-
+    return null;
   }
 
   render() {
     const {
-      title = 'Undefined',
+      title = 'Missing title',
       description,
       disallowRobots,
       openGraphImage,
       content = [],
       config = {},
-      slug
-    } = this.props
+      slug,
+    } = this.props;
 
-    const openGraphImages =
-      openGraphImage ? [
-        {
-          url: builder.image(openGraphImage).width(800).height(600).url(),
-          width: 800,
-          height: 600,
-          alt: title,
-        },
-        {
-          // Facebook recommended size
-          url: builder.image(openGraphImage).width(1200).height(630).url(),
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-        {
-          // Square 1:1
-          url: builder.image(openGraphImage).width(600).height(600).url(),
-          width: 600,
-          height: 600,
-          alt: title,
-        }
-      ] : []
+    const openGraphImages = openGraphImage
+      ? [
+          {
+            url: builder
+              .image(openGraphImage)
+              .width(800)
+              .height(600)
+              .url(),
+            width: 800,
+            height: 600,
+            alt: title,
+          },
+          {
+            // Facebook recommended size
+            url: builder
+              .image(openGraphImage)
+              .width(1200)
+              .height(630)
+              .url(),
+            width: 1200,
+            height: 630,
+            alt: title,
+          },
+          {
+            // Square 1:1
+            url: builder
+              .image(openGraphImage)
+              .width(600)
+              .height(600)
+              .url(),
+            width: 600,
+            height: 600,
+            alt: title,
+          },
+        ]
+      : [];
 
     return (
       <Layout config={config}>
         <NextSeo
           config={{
-            title: title,
+            title,
             titleTemplate: `${config.title} | %s`,
             description,
             canonical: config.url && `${config.url}/${slug}`,
             openGraph: {
               images: openGraphImages,
             },
-            noindex: disallowRobots
+            noindex: disallowRobots,
           }}
         />
         {/* {title && <h1>{title}</h1>} */}
-        {content && <RenderPlugs plugs={content} />}
+        {content && <RenderSections sections={content} />}
       </Layout>
-    )
+    );
   }
 }
 
-export default LandingPage
+export default LandingPage;
