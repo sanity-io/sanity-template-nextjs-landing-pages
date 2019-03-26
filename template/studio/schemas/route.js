@@ -13,21 +13,21 @@ export default {
       type: 'reference',
       to: [
         {
-          type: 'page'
-        }
-      ]
-    }
+          type: 'page',
+        },
+      ],
+    },
   ],
   preview: {
     select: {
       slug: 'slug.current',
-      pageTitle: 'page.title'
+      pageTitle: 'page.title',
     },
-    prepare({slug, pageTitle}) {
+    prepare({ slug, pageTitle }) {
       return {
         title: `/${slug}`,
-        subtitle: `Page: ${pageTitle}`
-      }
-    }
-  }
-}
+        subtitle: `Page: ${pageTitle}`,
+      };
+    },
+  },
+};

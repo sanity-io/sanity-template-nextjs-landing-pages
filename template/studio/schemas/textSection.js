@@ -1,31 +1,31 @@
 export default {
   type: 'object',
-  name: 'textPlug',
+  name: 'textSection',
   title: 'Text',
   fields: [
     {
       name: 'heading',
       type: 'string',
-      title: 'Heading'
+      title: 'Heading',
     },
     {
       name: 'label',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'text',
-      type: 'blockContent'
-    }
+      type: 'portableText',
+    },
   ],
   preview: {
     select: {
-      heading: 'heading'
+      heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `${heading}`,
-        subtitle: 'Text plug'
-      }
-    }
-  }
-}
+        subtitle: 'Text plug',
+      };
+    },
+  },
+};
