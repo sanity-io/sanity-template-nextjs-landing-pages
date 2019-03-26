@@ -17,6 +17,6 @@
 
 .heading {}
 
-.label + .heading {
+.label+.heading {
   margin-top: 0.2em;
 }
