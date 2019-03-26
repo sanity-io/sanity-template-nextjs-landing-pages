@@ -13,6 +13,7 @@
     "@sanity/client": "^0.140.8",
     "@sanity/image-url": "^0.140.9",
     "@zeit/next-css": "^1.0.1",
+    "groq": "^0.140.0",
     "lodash": "^4.17.11",
     "next": "^8.0.3",
     "next-seo": "^1.11.1",
