@@ -29,7 +29,7 @@
   padding: 0;
 }
 
-.title > a {
+.title>a {
   display: block;
   padding: 1em 0;
 }
@@ -67,7 +67,7 @@
   align-items: stretch;
 }
 
-.navItem > a {
+.navItem>a {
   display: flex;
   position: relative;
   height: 100%;
@@ -75,7 +75,7 @@
   box-sizing: border-box;
 }
 
-.navItem > a[data-is-active="true"]::before {
+.navItem>a[data-is-active="true"]::before {
   content: "";
   width: 100%;
   height: 1px;
