@@ -39,7 +39,7 @@ function ImageSection(props) {
 ImageSection.propTypes = {
   heading: PropTypes.string,
   label: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.array,
   image: PropTypes.shape({
     asset: PropTypes.shape({
       _ref: PropTypes.string,
@@ -47,7 +47,7 @@ ImageSection.propTypes = {
   }),
   backgroundImage: PropTypes.string,
   tagline: PropTypes.string,
-  cta: PropTypes.arrayOf(PropTypes.object),
+  cta: PropTypes.object,
 };
 
 export default ImageSection;
