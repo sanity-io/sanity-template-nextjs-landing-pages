@@ -42,7 +42,7 @@ function Hero(props) {
 Hero.propTypes = {
   heading: PropTypes.string,
   backgroundImage: PropTypes.object,
-  tagline: PropTypes.string,
+  tagline: PropTypes.array,
   ctas: PropTypes.arrayOf(PropTypes.object),
 };
 
