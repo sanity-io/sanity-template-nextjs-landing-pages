@@ -46,18 +46,16 @@ class LandingPage extends Component {
           groq`
         *[_id == "global-config"][0]{
           frontpage -> {
-            page-> {
+            ...,
+            content[] {
               ...,
-              content[] {
+              cta {
                 ...,
-                cta {
-                  ...,
-                  route->
-                },
-                ctas[] {
-                  ...,
-                  route->
-                }
+                route->
+              },
+              ctas[] {
+                ...,
+                route->
               }
             }
           }
