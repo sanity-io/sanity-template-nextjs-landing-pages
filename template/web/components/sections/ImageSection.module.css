@@ -41,7 +41,7 @@
     transform: translateY(-4rem);
     position: absolute;
     top: 5rem;
-    left: calc(50vw - var(--narrow-container) / 2);
+    left: calc(50vw - 0.5rem - var(--narrow-container) / 2);
     max-width: 20rem;
     margin: 0;
   }
