@@ -1,10 +1,11 @@
-import React from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
-import SimpleBlockContent from '../SimpleBlockContent';
-import styles from './TextSection.module.css';
+import SimpleBlockContent from '../SimpleBlockContent'
+import styles from './TextSection.module.css'
 
-function TextSection(props) {
-  const { heading, label, text } = props;
+function TextSection (props) {
+  const {heading, label, text} = props
+
   return (
     <div className={styles.root}>
       <article className={styles.article}>
@@ -13,7 +14,7 @@ function TextSection(props) {
         {text && <SimpleBlockContent blocks={text} />}
       </article>
     </div>
-  );
+  )
 }
 
 TextSection.propTypes = {

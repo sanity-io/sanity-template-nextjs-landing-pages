@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export && node exportSitemap.js",
+    "format": "prettier-eslint --write \"**/*.js\" \"!.next/**\" \"!node_modules/**\" \"!out/**\"",
+    "lint": "eslint .",
     "start": "next start"
   },
   "dependencies": {
@@ -24,7 +26,16 @@
     "react-mailchimp-subscribe": "^2.1.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "cssnano": "^4.1.10",
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
     "normalize.css": "^8.0.1",
     "postcss-import": "^12.0.1",
     "postcss-normalize": "^7.0.1",

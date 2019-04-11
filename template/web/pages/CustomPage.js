@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
 
 class CustomPage extends React.Component {
-  render() {
+  render () {
     const {config} = this.props
     return (
       <Layout config={config}>
@@ -10,6 +11,10 @@ class CustomPage extends React.Component {
       </Layout>
     )
   }
+}
+
+CustomPage.propTypes = {
+  config: PropTypes.object
 }
 
 export default CustomPage

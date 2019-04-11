@@ -1,17 +1,17 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-// import MailchimpSubscribe from "react-mailchimp-subscribe"
 import MailchimpForm from 'react-mailchimp-form'
-import styles from './Mailchimp.module.css';
+import styles from './Mailchimp.module.css'
 
-export default function Mailchimp(props) {
+export default function Mailchimp (props) {
   const {heading, subtitle, actionUrl} = props
+
   return (
     <div className={styles.root}>
       <div className={styles.container}>
         <h2 className={styles.heading}>{heading}</h2>
         <p className={styles.subtitle}>{subtitle}</p>
-        {
-          actionUrl && (
+        {actionUrl && (
           <MailchimpForm
             action={actionUrl}
             fields={[
@@ -26,33 +26,36 @@ export default function Mailchimp(props) {
             buttonClassName={styles.button}
             styles={{
               sendingMsg: {
-                color: "#0652DD"
+                color: '#0652DD'
               },
               successMsg: {
-                color: "#009432"
+                color: '#009432'
               },
               duplicateMsg: {
-                color: "#EE5A24"
+                color: '#EE5A24'
               },
               errorMsg: {
-                color: "red"
+                color: 'red'
               }
             }}
-            messages={
-              {
-                sending: "Sending...",
-                success: "Thank you for subscribing!",
-                error: "An unexpected internal error has occurred.",
-                empty: "You must write an e-mail.",
-                duplicate: "Already subscribed",
-                button: "Subscribe!"
-              }
-            }
+            messages={{
+              sending: 'Sending...',
+              success: 'Thank you for subscribing!',
+              error: 'An unexpected internal error has occurred.',
+              empty: 'You must write an e-mail.',
+              duplicate: 'Already subscribed',
+              button: 'Subscribe!'
+            }}
             className={styles.form}
           />
-          )
-        }
+        )}
       </div>
     </div>
   )
+}
+
+Mailchimp.propTypes = {
+  heading: PropTypes.string,
+  subtitle: PropTypes.string,
+  actionUrl: PropTypes.string
 }
