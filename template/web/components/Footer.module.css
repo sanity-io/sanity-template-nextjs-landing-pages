@@ -1,6 +1,5 @@
 .root {
-  background-color: var(--color-black, #333);
-  color: var(--color-white, #fff);
+  color: var(--color-black, #333);
   composes: center from '../styles/shared.module.css';
   font-size: 0.8em;
   padding-top: 2rem;
