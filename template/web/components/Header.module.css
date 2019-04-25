@@ -2,8 +2,7 @@
 
 .root {
   position: relative;
-  background-color: var(--color-black, #000);
-  color: var(--color-white, #fff);
+  color: var(--color-black, #000);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,6 +39,9 @@
   width: auto;
   color: inherit;
 }
+.title svg path {
+  fill: currentColor;
+}
 
 .logo {
   display: block;
@@ -50,9 +52,13 @@
 }
 
 .navItems {
-  display: none;
+  position: absolute;
+  transform: translateX(100%);
+  transition: transform 150ms linear;
 
   @media (--media-min-medium) {
+    transform: translateX(0);
+    position: relative;
     display: flex;
     justify-content: flex-end;
     margin: 0;
@@ -98,12 +104,29 @@
 .root[data-show-nav="true"] .navItems {
   z-index: 10;
   background-color: var(--color-black, #000);
+  color: var(--color-white, #fff);
   display: block;
   position: absolute;
-  bottom: 0;
+  top: 100%;
   right: 0;
   transform: translateY(100%);
-  padding: 0;
+  transform: translateX(0);
+  width: 100vw;
   margin: 0;
   box-sizing: border-box;
+  text-align: right;
+}
+
+.root[data-show-nav="true"] .navItems li {
+  display: block;
+}
+
+.root[data-show-nav="true"] .navItem>a[data-is-active="true"]::before {
+  display: none;
+}
+
+.root[data-show-nav="true"] .navItems a {
+  display: block;
+  padding: 1em;
+  text-align: right;
 }
