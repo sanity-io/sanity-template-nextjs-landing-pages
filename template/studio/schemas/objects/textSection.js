@@ -4,17 +4,19 @@ export default {
   title: 'Text',
   fields: [
     {
+      name: 'label',
+      type: 'string',
+      title: 'Label'
+    },
+    {
       name: 'heading',
       type: 'string',
       title: 'Heading',
     },
     {
-      name: 'label',
-      type: 'string',
-    },
-    {
       name: 'text',
       type: 'portableText',
+      title: 'Text'
     },
   ],
   preview: {

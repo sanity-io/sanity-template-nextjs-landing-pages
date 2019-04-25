@@ -12,6 +12,6 @@ export default {
     }
   ],
   blockEditor: {
-    icon: () => '🔗'
+    icon: '🔗'
   }
 }

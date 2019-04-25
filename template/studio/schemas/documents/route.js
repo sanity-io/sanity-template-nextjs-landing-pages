@@ -2,15 +2,16 @@ export default {
   name: 'route',
   type: 'document',
   title: 'Route',
-  liveEdit: false,
   fields: [
     {
       name: 'slug',
       type: 'slug',
+      title: 'Slug'
     },
     {
       name: 'page',
       type: 'reference',
+      description: 'Select the page that this route should point to',
       to: [
         {
           type: 'page',

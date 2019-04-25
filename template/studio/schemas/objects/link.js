@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default {
   title: 'URL',
   name: 'link',
@@ -10,7 +12,7 @@ export default {
     }
   ],
   blockEditor: {
-    icon: () => '🌍',
+    icon: '🌍',
     render: ({children}) => <span>{children} </span>
   }
 }

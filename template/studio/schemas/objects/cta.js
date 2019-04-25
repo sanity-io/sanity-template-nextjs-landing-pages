@@ -2,6 +2,9 @@ export default {
   title: 'Call to action',
   name: 'cta',
   type: 'object',
+  validation: Rule => Rule.custom(fields => {
+    return (!fields.route || !fields.link) || 'Only one link type is allowed'
+  }),
   fieldsets: [
     {
       title: 'Link',
@@ -36,7 +39,7 @@ export default {
       slug: 'route.slug.current',
       link: 'link',
     },
-    prepare({ title, routeTitle, slug, link }) {
+    prepare({ title, routeTitle = '', slug, link }) {
       const subtitleExtra = slug
         ? `Slug:/${slug}/`
         : link

@@ -1,26 +1,26 @@
-import bcp47 from 'bcp47';
+import bcp47 from 'bcp47'
 
 export default {
-  type: 'object',
   name: 'site-config',
-  title: 'Site config',
+  type: 'object',
+  title: 'Site configuration',
   fieldsets: [{ name: 'footer', title: 'Footer' }],
   fields: [
     {
-      title: 'Site title',
       name: 'title',
       type: 'string',
+      title: 'Site title'
     },
     {
       title: 'URL',
       name: 'url',
       type: 'url',
-      description: 'The main site url. Used to create canonical url',
+      description: 'The main site url. Used to create canonical url'
     },
     {
       name: 'frontpage',
       type: 'reference',
-      to: { type: 'page' },
+      to: { type: 'page' }
     },
     {
       title: 'Site language',
@@ -29,16 +29,16 @@ export default {
       name: 'lang',
       type: 'string',
       validation: Rule =>
-        Rule.custom(lang =>
-          bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
-        ),
+        Rule.custom(
+          lang => (bcp47.parse(lang) ? true : 'Please use a valid bcp47 code')
+        )
     },
     {
       title: 'Brand logo',
       description:
         'Best choice is to use an SVG where the color are set with currentColor',
       name: 'logo',
-      type: 'image',
+      type: 'image'
     },
     {
       title: 'Main navigation',
@@ -47,9 +47,9 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'route' }],
-        },
-      ],
+          to: [{ type: 'route' }]
+        }
+      ]
     },
     {
       title: 'Footer navigation items',
@@ -59,14 +59,14 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'route' }],
-        },
-      ],
+          to: [{ type: 'route' }]
+        }
+      ]
     },
     {
       name: 'footerText',
       type: 'simplePortableText',
-      fieldset: 'footer',
-    },
-  ],
-};
+      fieldset: 'footer'
+    }
+  ]
+}
