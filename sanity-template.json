@@ -2,12 +2,23 @@
   "version": 1,
   "title": "Next.js landing pages",
   "description": "An application for editing and rendering landing pages.",
+  "technologies": [
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "url": "https://nextjs.org/"
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "url": "https://www.netlify.com/"
+    }
+  ],
   "deployments": [
     {
       "id": "studio",
       "type": "studio",
       "title": "Content Studio",
-      "dir": "./studio",
       "provider": {
         "name": "netlify",
         "config": {
@@ -21,7 +32,6 @@
       "id": "web",
       "type": "web",
       "title": "Frontend",
-      "dir": "./web",
       "requiredTokens": [
         {
           "role": "deploy-studio",
@@ -36,19 +46,5 @@
         }
       }
     }
-  ],
-  "metadata": {
-    "technologies": [
-      {
-        "id": "nextjs",
-        "name": "Next.js",
-        "url": "https://nextjs.org/"
-      },
-      {
-        "id": "netlify",
-        "name": "Netlify",
-        "url": "https://www.netlify.com/"
-      }
-    ]
-  }
+  ]
 }
