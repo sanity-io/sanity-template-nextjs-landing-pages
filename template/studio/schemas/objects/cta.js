@@ -28,7 +28,7 @@ export default {
     {
       title: 'External link',
       name: 'link',
-      type: 'string',
+      type: 'url',
       fieldset: 'link',
     },
   ],
