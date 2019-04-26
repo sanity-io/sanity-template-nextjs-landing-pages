@@ -2,8 +2,9 @@ import bcp47 from 'bcp47'
 
 export default {
   name: 'site-config',
-  type: 'object',
+  type: 'document',
   title: 'Site configuration',
+  __experimental_actions: [/*create, delete, */ 'update', 'publish'],
   fieldsets: [{ name: 'footer', title: 'Footer' }],
   fields: [
     {

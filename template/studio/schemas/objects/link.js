@@ -12,7 +12,7 @@ export default {
     }
   ],
   blockEditor: {
-    icon: '🌍',
+    icon: () => '🌍',
     render: ({children}) => <span>{children} </span>
   }
 }
