@@ -21,7 +21,7 @@
     },
     {
       "implements": "part:@sanity/desk-tool/structure",
-      "path": "./structure/default.js"
+      "path": "./deskStructure.js"
     }
   ]
 }
