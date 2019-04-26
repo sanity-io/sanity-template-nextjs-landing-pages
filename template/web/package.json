@@ -13,7 +13,7 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.140.8",
-    "@sanity/image-url": "^0.140.9",
+    "@sanity/image-url": "^0.140.12",
     "@zeit/next-css": "^1.0.1",
     "groq": "^0.140.0",
     "lodash": "^4.17.11",
