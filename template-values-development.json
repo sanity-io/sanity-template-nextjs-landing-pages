@@ -5,8 +5,8 @@
     "private": false
   },
   "sanity": {
-    "dataset": "development",
-    "projectId": "pcgsfgel",
+    "dataset": "landing-pages",
+    "projectId": "jmhf2rn8",
     "projectTitle": "Next.js landing pages (dev)"
   },
   "user": {

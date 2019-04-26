@@ -21,6 +21,7 @@ function ImageSection (props) {
         <img
           src={builder
             .image(image)
+            .auto('format')
             .width(2000)
             .url()}
           className={styles.image}
