@@ -22,6 +22,7 @@
   display: grid;
 
   @media (--media-min-medium) {
+    min-width: 34rem;
     display: grid;
     grid-template-columns: 80% 20%;
   }
