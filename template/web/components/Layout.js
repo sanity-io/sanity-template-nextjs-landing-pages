@@ -18,7 +18,7 @@ function Layout (props) {
   const logoUrl = logo && logo.asset && logo.asset.url
 
   return (
-    <div>
+    <>
       <Head>
         <meta name='viewport' content='initial-scale=1.0, width=device-width, viewport-fit=cover' />
       </Head>
@@ -28,7 +28,7 @@ function Layout (props) {
         <Footer navItems={footerNavigation} text={footerText} />
         {logoUrl && url && <LogoJsonLd url={url} logo={logoUrl} />}
       </div>
-    </div>
+    </>
   )
 }
 
