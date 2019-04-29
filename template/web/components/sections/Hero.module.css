@@ -21,8 +21,11 @@
 }
 
 .content {
-  composes: narrow-container from '../../styles/shared.module.css';
-  width: 100%;
+  /* composes: narrow-container from '../../styles/shared.module.css'; */
+  max-width: 960px;
+  padding: 0 1em;
+  box-sizing: border-box;
+  /* width: 100%; */
   z-index: 1;
 }
 
@@ -30,7 +33,7 @@
   position: relative;
   font-weight: 700;
   font-size: 3em;
-  text-shadow: 0 0 10em #000;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   margin: 0;
   padding: 0;
   padding-top: 3em;
@@ -40,12 +43,12 @@
 .tagline {
   position: relative;
   font-size: 1.2em;
-  font-weight: 300;
+  font-weight: 600;
   margin: 0;
   padding: 0;
   margin-top: 0.5em;
   margin-bottom: 1rem;
-  text-shadow: 0 0 2em #000;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .tagline > p {

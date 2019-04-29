@@ -23,11 +23,12 @@
 }
 
 .content {
-  composes: normal-container from '../../styles/shared.module.css';
-  margin-top: 2em;
+  /* composes: normal-container from '../../styles/shared.module.css'; */
+  margin: 2em 1em 0;
+  max-width: 960px;
 
   @media (--typography-breakpoint) {
-    margin-top: 10em;
+    margin: 10em 0 0;
   }
 }
 
