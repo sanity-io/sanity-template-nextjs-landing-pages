@@ -17,7 +17,7 @@ export default {
       name: 'actionUrl',
       type: 'url',
       title: 'URL to Mailchimp signup',
-      description: 'Add the URL for the Mailchimp signup form here'
+      description: 'URL for the Mailchimp signup form. Remember to add your domain in your mailchimp settings to avoid CORS errors.'
     },
   ],
   preview: {
