@@ -1,7 +1,7 @@
 import React from 'react'
-import App, {Container} from 'next/app'
+import BaseApp, {Container} from 'next/app'
 import client from '../client'
-import 'normalize.css'
+// import 'normalize.css'
 import '../styles/shared.module.css'
 import '../styles/layout.css'
 
@@ -20,7 +20,7 @@ const siteConfigQuery = `
   }[0]
   `
 
-class MyApp extends App {
+class App extends BaseApp {
   static async getInitialProps ({Component, ctx}) {
     let pageProps = {}
 
@@ -51,4 +51,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp
+export default App

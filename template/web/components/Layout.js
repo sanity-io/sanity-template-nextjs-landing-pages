@@ -24,7 +24,7 @@ function Layout (props) {
       </Head>
       <div className='container'>
         <Header title={title} navItems={mainNavigation} logo={logo} />
-        {children}
+        <div className='content'>{children}</div>
         <Footer navItems={footerNavigation} text={footerText} />
         {logoUrl && url && <LogoJsonLd url={url} logo={logoUrl} />}
       </div>

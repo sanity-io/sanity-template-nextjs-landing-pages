@@ -72,7 +72,7 @@ class Header extends Component {
 
     return (
       <div className={styles.root} data-show-nav={showNav}>
-        <h1 className={styles.title}>
+        <h1 className={styles.branding}>
           <Link
             href={{
               pathname: '/LandingPage',
@@ -109,7 +109,9 @@ class Header extends Component {
                 )
               })}
           </ul>
-          <HamburgerIcon className={styles.hamburgerIcon} onClick={this.handleMenuToggle} />
+          <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
+            <HamburgerIcon className={styles.hamburgerIcon} />
+          </button>
         </nav>
       </div>
     )

@@ -4,9 +4,9 @@
   border-radius: 0;
   border: 1px solid currentColor;
   background-color: transparent;
-  padding: 1em;
+  padding: 1em 1.5em;
   text-decoration: inherit;
-  font-weight: 500;
+  font-weight: 600;
   max-width: fit-content;
   transition: transform 50ms ease-in-out;
   transform: scale(1);

@@ -8,11 +8,11 @@ function TextSection (props) {
 
   return (
     <div className={styles.root}>
-      <article className={styles.article}>
+      <section className={styles.article}>
         <div className={styles.label}>{label}</div>
         <h2 className={styles.heading}>{heading}</h2>
         {text && <SimpleBlockContent blocks={text} />}
-      </article>
+      </section>
     </div>
   )
 }

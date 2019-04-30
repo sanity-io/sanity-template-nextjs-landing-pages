@@ -15,7 +15,11 @@ body {
 
 html,
 body,
-#__next,
+:global(#__next),
 :global(.container) {
   height: 100%;
+}
+
+:global(.content) {
+  min-height: calc(100% - 84px - 218px);
 }

@@ -29,4 +29,11 @@
   --font-title2-line-height: calc(33 / 24); /* 33px */
   --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
   --font-title1-line-height: calc(57 / 49); /* 57px */
+
+  /* Widths */
+  --width-x-small: 20em;
+  --width-small: 40em;
+  --width-medium: 60em;
+  --width-large: 80em;
+  --width-x-large: 100em;
 }
