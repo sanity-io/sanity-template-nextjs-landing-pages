@@ -4,14 +4,13 @@ const client = require('./client')
 const isProduction = process.env.NODE_ENV === 'production'
 const query = `
 {
-  "frontpage": *[_id == "global-config"] {frontpage-> {...}}[0].frontpage,
   "routes": *[_type == "route"] {
     ...,
+    disallowRobot,
+    includeInSitemap,
     page->{
       _id,
       title,
-      disallowRobot,
-      includeInSitemap,
       _createdAt,
       _updatedAt
   }}
@@ -19,8 +18,10 @@ const query = `
 `
 const reduceRoutes = (obj, route) => {
   const {page = {}, slug = {}} = route
-  const {includeInSitemap, disallowRobot, _createdAt, _updatedAt} = page
-  obj[`/${route['slug']['current']}`] = {
+  const { _createdAt, _updatedAt} = page
+  const {includeInSitemap, disallowRobot,} = route
+  const path = route['slug']['current'] === '/' ? '/' : `/${route['slug']['current']}`
+  obj[path] = {
     query: {
       slug: slug.current
     },
@@ -41,22 +42,11 @@ module.exports = withCSS({
   },
   exportPathMap: function () {
     return client.fetch(query).then(res => {
-      const {frontpage = {}, routes = []} = res
-      const {includeInSitemap, disallowRobot, _updatedAt} = frontpage
+      const {routes = []} = res
       const nextRoutes = {
-        // Index page from gobal-config
-        '/': {
-          page: '/LandingPage',
-          includeInSitemap,
-          disallowRobot,
-          _updatedAt,
-          query: {
-            slug: '/'
-          }
-        },
-        '/custom-page': {page: '/CustomPage'},
         // Routes imported from sanity
-        ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {})
+        ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {}),
+        '/custom-page': {page: '/CustomPage'}
       }
       return nextRoutes
     })
