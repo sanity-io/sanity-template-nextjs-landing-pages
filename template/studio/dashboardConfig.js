@@ -1,7 +1,7 @@
 export default {
   widgets: [
-    {name: 'structure-menu'},
     {name: 'sanity-tutorials'},
+    {name: 'structure-menu'},
     {
       name: 'project-info',
       options: {
@@ -9,28 +9,36 @@ export default {
           {
             name: 'netlify',
             options: {
-              title: 'Netlify',
               sites: [
                 {
-                  buildHookId: '<#<deployments.studio.provider.buildHookId>#>',
-                  name: 'Sanity Studio',
-                  siteId: '<#<deployments.studio.provider.buildHookId>#>'
+                  buildHookId: '<#<deployments.studio.providerInfo.buildHookId>#>',
+                  name: 'Content Studio',
+                  siteId: '<#<deployments.studio.providerInfo.siteId>#>'
                 },
                 {
-                  buildHookId: '<#<deployments.web.provider.buildHookId>#>',
-                  name: 'Website',
-                  siteId: '<#<deployments.web.provider.buildHookId>#>'
+                  buildHookId: '<#<deployments.web.providerInfo.buildHookId>#>',
+                  name: 'Blog Website',
+                  siteId: '<#<deployments.web.providerInfo.siteId>#>'
                 }
               ]
             }
           }
+        ],
+        data: [
+          {
+            title: 'GitHub repo',
+            value: 'https://github.com/<#<repository.owner>#>/<#<repository.name>#>',
+            category: 'Code'
+          },
+          {title: 'Frontend', value: '<#<deployments.web.url>#>', category: 'apps'}
         ]
       }
     },
     {name: 'project-users', layout: {height: 'auto'}},
     {
       name: 'document-list',
-      options: {title: 'Recently edited', order: '_updatedAt desc', limit: 10, types: ['page']}
+      options: {title: 'Recently edited', order: '_updatedAt desc', limit: 10, types: ['page']},
+      layout: {width: 'medium'}
     }
   ]
 }
