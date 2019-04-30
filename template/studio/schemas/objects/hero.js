@@ -11,7 +11,7 @@ export default {
     {
       name: 'tagline',
       type: 'simplePortableText',
-      title: 'Tagline'
+      title: 'Tagline',
     },
     {
       name: 'backgroundImage',

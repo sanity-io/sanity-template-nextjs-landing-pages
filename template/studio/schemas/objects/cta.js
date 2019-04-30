@@ -2,9 +2,11 @@ export default {
   title: 'Call to action',
   name: 'cta',
   type: 'object',
-  validation: Rule => Rule.custom((fields = {}) => {
-    return (!fields.route || !fields.link) || 'Only one link type is allowed'
-  }),
+  validation: Rule =>
+    Rule.custom(
+      (fields = {}) =>
+        !fields.route || !fields.link || 'Only one link type is allowed'
+    ),
   fieldsets: [
     {
       title: 'Link',

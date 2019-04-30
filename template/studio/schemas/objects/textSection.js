@@ -6,7 +6,7 @@ export default {
     {
       name: 'label',
       type: 'string',
-      title: 'Label'
+      title: 'Label',
     },
     {
       name: 'heading',
@@ -16,7 +16,7 @@ export default {
     {
       name: 'text',
       type: 'portableText',
-      title: 'Text'
+      title: 'Text',
     },
   ],
   preview: {
@@ -26,7 +26,7 @@ export default {
     prepare({ heading }) {
       return {
         title: `${heading}`,
-        subtitle: 'Text plug',
+        subtitle: 'Text section',
       };
     },
   },

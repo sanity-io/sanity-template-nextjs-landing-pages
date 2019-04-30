@@ -19,39 +19,10 @@ export default {
           { title: 'Emphasis', value: 'em' },
           { title: 'Code', value: 'code' },
         ],
-        annotations: [
-          {
-            title: 'URL',
-            name: 'link',
-            type: 'object',
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'string',
-                validation: Rule =>
-                  Rule.uri({
-                    allowRelative: true,
-                    scheme: ['https', 'http', 'mailto', 'tel'],
-                  }),
-              },
-            ],
-          },
-          {
-            title: 'Internal link to another document',
-            name: 'internalLink',
-            type: 'reference',
-            to: [
-              { type: 'article' },
-              { type: 'chapter' },
-              { type: 'remoteArticle' },
-              { type: 'schemaType' },
-            ],
-            description: 'Locate a document you want to link to',
-          },
-        ],
+        annotations: [{ type: 'link' }, { type: 'internalLink' }],
       },
     },
-    { type: 'figure' }
+    { type: 'figure' },
+    { type: 'embedHTML' },
   ],
 };

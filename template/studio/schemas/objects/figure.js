@@ -3,7 +3,7 @@ export default {
   title: 'Image',
   type: 'image',
   options: {
-    hotspot: true
+    hotspot: true,
   },
   fields: [
     {
@@ -18,8 +18,7 @@ export default {
       name: 'alt',
       type: 'string',
       title: 'Alternative text',
-      description:
-        'Important for SEO and accessiblity.',
+      description: 'Important for SEO and accessiblity.',
       options: {
         isHighlighted: true,
       },
@@ -31,4 +30,4 @@ export default {
       title: 'caption',
     },
   },
-}
+};

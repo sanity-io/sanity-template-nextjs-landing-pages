@@ -1,28 +1,29 @@
-import bcp47 from 'bcp47'
+import bcp47 from 'bcp47';
 
 export default {
   name: 'site-config',
   type: 'document',
   title: 'Site configuration',
-  __experimental_actions: [/*create, delete, */ 'update', 'publish'],
+  // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
+  __experimental_actions: [/* create, delete, */ 'update', 'publish'],
   fieldsets: [{ name: 'footer', title: 'Footer' }],
   fields: [
     {
       name: 'title',
       type: 'string',
-      title: 'Site title'
+      title: 'Site title',
     },
     {
       title: 'URL',
       name: 'url',
       type: 'url',
-      description: 'The main site url. Used to create canonical url'
+      description: 'The main site url. Used to create canonical url',
     },
     {
       name: 'frontpage',
       type: 'reference',
       description: 'Choose page to be the frontpage',
-      to: { type: 'page' }
+      to: { type: 'page' },
     },
     {
       title: 'Site language',
@@ -31,9 +32,9 @@ export default {
       name: 'lang',
       type: 'string',
       validation: Rule =>
-        Rule.custom(
-          lang => (bcp47.parse(lang) ? true : 'Please use a valid bcp47 code')
-        )
+        Rule.custom(lang =>
+          bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
+        ),
     },
     {
       title: 'Brand logo',
@@ -46,13 +47,12 @@ export default {
           name: 'alt',
           type: 'string',
           title: 'Alternative text',
-          description:
-            'Important for SEO and accessiblity.',
+          description: 'Important for SEO and accessiblity.',
           options: {
             isHighlighted: true,
           },
         },
-      ]
+      ],
     },
     {
       title: 'Main navigation',
@@ -66,9 +66,9 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'route' }]
-        }
-      ]
+          to: [{ type: 'route' }],
+        },
+      ],
     },
     {
       title: 'Footer navigation items',
@@ -82,14 +82,14 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'route' }]
-        }
-      ]
+          to: [{ type: 'route' }],
+        },
+      ],
     },
     {
       name: 'footerText',
       type: 'simplePortableText',
-      fieldset: 'footer'
-    }
-  ]
-}
+      fieldset: 'footer',
+    },
+  ],
+};

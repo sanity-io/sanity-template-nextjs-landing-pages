@@ -1,9 +1,9 @@
-import embedHTML from './embedHTML'
 export default {
   title: 'Simple Portable Text',
   name: 'simplePortableText',
   type: 'array',
-  of: [{
+  of: [
+    {
       title: 'Block',
       type: 'block',
       styles: [],
@@ -14,14 +14,11 @@ export default {
           { title: 'Emphasis', value: 'em' },
           { title: 'Code', value: 'code' },
         ],
-        annotations: [
-          { type: 'link' },
-          { type: 'internalLink' }
-        ],
+        annotations: [{ type: 'link' }, { type: 'internalLink' }],
       },
     },
     {
-      type: 'embedHTML'
-    }
+      type: 'embedHTML',
+    },
   ],
 };

@@ -11,13 +11,14 @@ export default {
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subheading'
+      title: 'Subheading',
     },
     {
       name: 'actionUrl',
       type: 'url',
       title: 'URL to Mailchimp signup',
-      description: 'URL for the Mailchimp signup form. Remember to add your domain in your mailchimp settings to avoid CORS errors.'
+      description:
+        'URL for the Mailchimp signup form. Remember to add your domain in your mailchimp settings to avoid CORS errors.',
     },
   ],
   preview: {
@@ -27,7 +28,7 @@ export default {
     prepare({ title }) {
       return {
         title,
-        subtitle: 'Mailchimp newsletter signup plug',
+        subtitle: 'Mailchimp newsletter signup section',
       };
     },
   },
