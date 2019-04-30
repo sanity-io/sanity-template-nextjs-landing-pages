@@ -1,39 +1,37 @@
+@import '../styles/custom-properties.css';
+
 .root {
   color: var(--color-black, #333);
-  composes: center from '../styles/shared.module.css';
-  font-size: 0.8em;
-  padding-top: 2rem;
-}
-
-.nav {
-  composes: narrow-container from '../styles/shared.module.css';
-  padding: 3rem 1rem;
-}
-
-.nav a {
-  display: block;
-  line-height: 2em;
-  color: inherit;
-  text-decoration: inherit;
-  color: inherit;
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
+  padding: 2rem 0;
 }
 
 .items {
+  list-style: none;
   display: flex;
-  margin: 0;
+  justify-content: center;
+  margin: 0 0 3rem;
+  padding: 0;
 }
 
 .item {
-  display: list-item;
-  margin-left: 1.8em;
-}
-
-.item:first-child {
-  display: block;
+  @nest & > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem 0.5rem;
+  }
 }
 
 .text {
   text-align: center;
-  margin-bottom: 2rem;
-  opacity: 0.5;
+
+  @nest & p {
+    margin: 1rem 0;
+  }
+
+  @nest & a {
+    color: inherit;
+  }
 }

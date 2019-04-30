@@ -1,18 +1,12 @@
 @import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
   position: relative;
   color: var(--color-black, #000);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1em;
-  box-sizing: border-box;
-
-  @supports (padding-top: env(safe-area-inset-top)) {
-    padding-left: calc(env(safe-area-inset-left) + 1em);
-    padding-right: calc(env(safe-area-inset-right) + 1em);
-  }
+  margin: 0 auto;
+  max-width: var(--width-small);
 }
 
 .root a {
@@ -20,27 +14,36 @@
   text-decoration: inherit;
 }
 
-.title {
+.branding {
   font-size: inherit;
   font-weight: inherit;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-}
 
-.title>a {
-  display: block;
-  padding: 1em 0;
-}
+  @nest & > a {
+    display: block;
+    padding: 1.5em;
 
-.title img,
-.title svg {
-  height: 2em;
-  width: auto;
-  color: inherit;
-}
-.title svg path {
-  fill: currentColor;
+    @supports (padding-top: env(safe-area-inset-top)) {
+      padding-left: calc(env(safe-area-inset-left) + 1.5rem);
+    }
+  }
+
+  @nest & img, & svg {
+    height: calc(var(--font-base-line-height) * 1.5rem);
+    width: auto;
+    color: inherit;
+    vertical-align: top;
+  }
+
+  @nest & svg path {
+    fill: currentColor;
+  }
+
+  @media (--media-max-medium) {
+    flex: 1;
+  }
 }
 
 .logo {
@@ -48,85 +51,99 @@
 }
 
 .nav {
-  display: flex;
+  @media (--media-min-medium) {
+    flex: 1;
+  }
 }
 
 .navItems {
-  position: absolute;
-  transform: translateX(100%);
-  transition: transform 150ms linear;
+  padding: 0;
+  margin: 0;
 
   @media (--media-min-medium) {
-    transform: translateX(0);
-    position: relative;
     display: flex;
     justify-content: flex-end;
-    margin: 0;
-    padding: 0;
+    padding: 0 1rem;
+  }
+
+  @supports (padding-top: env(safe-area-inset-top)) {
+    padding-right: calc(env(safe-area-inset-right) + 1rem);
+  }
+
+  @media (--media-max-medium) {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background-color: var(--color-black, #000);
+    color: var(--color-white, #fff);
+
+    @nest .root[data-show-nav="true"] & {
+      display: block;
+    }
   }
 }
 
 .navItem {
   display: flex;
-  margin-left: 1em;
   white-space: nowrap;
   align-items: stretch;
+  line-height: calc(var(--font-base-line-height) * 1.5rem);
+
+  @nest & > a {
+    display: block;
+    position: relative;
+    padding: 1.5rem 0.5rem;
+
+    @media (--media-max-medium) {
+      padding: 1rem 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: right;
+
+      @nest &[data-is-active="true"]::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0;
+        background-color: var(--color-white, #fff);
+      }
+    }
+  }
+
+  @nest .root[data-show-nav="true"] & > a[data-is-active="true"]::before {
+    display: none;
+  }
+
+  @media (--media-min-medium) {
+    margin-left: 0.5rem;
+  }
 }
 
-.navItem>a {
-  display: flex;
-  position: relative;
-  height: 100%;
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-.navItem>a[data-is-active="true"]::before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  bottom: 0.5rem;
-  left: 0;
-  background-color: var(--color-white, #fff);
-}
-
-.hamburgerIcon {
-  font-size: 2em;
-  display: block;
-  margin-left: 1em;
+.showNavButton {
+  appearance: none;
+  border: none;
+  font: inherit;
+  background: none;
+  color: inherit;
+  margin: 0;
+  padding: 1.5rem;
+  outline: none;
 
   @media (--media-min-medium) {
     display: none;
   }
 }
 
-.root[data-show-nav="true"] .navItems {
-  z-index: 10;
-  background-color: var(--color-black, #000);
-  color: var(--color-white, #fff);
+.hamburgerIcon {
+  font-size: calc(var(--font-base-line-height) * 1.5rem);
   display: block;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  transform: translateY(100%);
-  transform: translateX(0);
-  width: 100vw;
-  margin: 0;
-  box-sizing: border-box;
-  text-align: right;
-}
 
-.root[data-show-nav="true"] .navItems li {
-  display: block;
-}
-
-.root[data-show-nav="true"] .navItem>a[data-is-active="true"]::before {
-  display: none;
-}
-
-.root[data-show-nav="true"] .navItems a {
-  display: block;
-  padding: 1em;
-  text-align: right;
+  @media (--media-min-medium) {
+    display: none;
+  }
 }

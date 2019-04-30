@@ -1,14 +1,19 @@
 @import "../../styles/custom-media.css";
+@import '../../styles/custom-properties.css';
 
 .root {
-  composes: center from '../../styles/shared.module.css';
   position: relative;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  padding: 2rem 0;
+
+  @media (--media-min-medium) {
+    padding: 4rem 0;
+  }
 }
 
 .label {
-  font-size: 0.8em;
+  font-size: var(--font-micro-size);
+  line-height: var(--font-micro-line-height);
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-top: 1em;
 }
@@ -17,32 +22,53 @@
   margin-top: 0.2em;
 }
 
+.title {
+  font-size: var(--font-title3-size);
+  line-height: var(--font-title3-line-height);
+}
+
 .image {
   display: block;
   width: 100%;
 }
 
 .content {
-  composes: normal-container from '../../styles/shared.module.css';
-  margin-top: 2em;
+  position: relative;
+  margin: 0 1.5rem;
+  max-width: var(--width-medium);
 
-  @media (--typography-breakpoint) {
-    margin-top: 10em;
+  @nest & figcaption {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media (--media-min-medium) {
+    margin: 0 auto;
+    padding-top: 2rem;
+
+    @nest & figcaption {
+      position: absolute;
+      top: 0;
+    }
   }
 }
 
 .caption {
-  background-color: #fff;
-  border: 1px solid #000;
-  padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 
+  @media (--media-min-medium) {
+    max-width: calc(var(--width-small) - 3rem);
+  }
+}
 
-  @media (--typography-breakpoint) {
-    transform: translateY(-4rem);
-    position: absolute;
-    top: 5rem;
-    left: calc(50vw - 0.5rem - var(--narrow-container) / 2);
-    max-width: 20rem;
-    margin: 0;
+.captionBox {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  padding: 1.5rem;
+
+  @media (--media-min-medium) {
+    max-width: calc((var(--width-small) / 2) - 3rem);
   }
 }

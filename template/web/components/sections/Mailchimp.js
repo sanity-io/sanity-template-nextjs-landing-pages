@@ -7,7 +7,7 @@ export default function Mailchimp (props) {
   const {heading, subtitle, actionUrl} = props
 
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <div className={styles.container}>
         <h2 className={styles.heading}>{heading}</h2>
         <p className={styles.subtitle}>{subtitle}</p>
@@ -50,7 +50,7 @@ export default function Mailchimp (props) {
           />
         )}
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -1,21 +1,25 @@
-@import './custom-media.css';
 @import './custom-properties.css';
 
-html, body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 18px;
-  max-width: 100vw;
-  overflow-x: hidden;
+html {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-line-height);
 }
 
-img {
-  max-width: 100%;
-}
-
-figure {
+body {
+  -webkit-font-smoothing: antialiased;
+  background: var(--color-white);
+  color: var(--color-black);
   margin: 0;
 }
 
-p {
-  line-height: 1.4444em;
+html,
+body,
+:global(#__next),
+:global(.container) {
+  height: 100%;
+}
+
+:global(.content) {
+  min-height: calc(100% - 84px - 218px);
 }
