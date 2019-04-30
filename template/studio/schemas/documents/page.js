@@ -1,10 +1,7 @@
-import React from 'react';
-
 export default {
   name: 'page',
   type: 'document',
   title: 'Page',
-  liveEdit: false,
   fieldsets: [
     {
       title: 'SEO & metadata',
@@ -36,20 +33,6 @@ export default {
       fieldset: 'metadata',
     },
     {
-      name: 'includeInSitemap',
-      type: 'boolean',
-      title: 'Include page in sitemap',
-      description: 'For search engines. Will be added to /sitemap.xml',
-      fieldset: 'metadata',
-    },
-    {
-      name: 'disallowRobots',
-      type: 'boolean',
-      title: 'Disallow in robots.txt',
-      description: 'Hide this route for search engines',
-      fieldset: 'metadata',
-    },
-    {
       name: 'openGraphImage',
       type: 'image',
       title: 'Open Graph Image',
@@ -61,7 +44,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      media: 'openGraphImage'
-    }
+      media: 'openGraphImage',
+    },
   },
 };

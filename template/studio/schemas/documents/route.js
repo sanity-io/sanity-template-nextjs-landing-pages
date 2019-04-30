@@ -1,4 +1,5 @@
-import { MdLink } from 'react-icons/lib/md'
+import { MdLink } from 'react-icons/lib/md';
+
 export default {
   name: 'route',
   type: 'document',
@@ -8,7 +9,7 @@ export default {
     {
       name: 'slug',
       type: 'slug',
-      title: 'Slug'
+      title: 'Slug',
     },
     {
       name: 'page',
@@ -20,6 +21,18 @@ export default {
         },
       ],
     },
+    {
+      name: 'includeInSitemap',
+      type: 'boolean',
+      title: 'Include page in sitemap',
+      description: 'For search engines. Will be added to /sitemap.xml',
+    },
+    {
+      name: 'disallowRobots',
+      type: 'boolean',
+      title: 'Disallow in robots.txt',
+      description: 'Hide this route for search engines',
+    },
   ],
   preview: {
     select: {
@@ -28,7 +41,7 @@ export default {
     },
     prepare({ slug, pageTitle }) {
       return {
-        title: `/${slug}`,
+        title: slug === '/' ? '/' : `/${slug}`,
         subtitle: `Page: ${pageTitle}`,
       };
     },
