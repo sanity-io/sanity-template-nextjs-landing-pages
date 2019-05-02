@@ -22,7 +22,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sanity-plugin-dashboard-widget-document-list": "^0.0.6",
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.8",
     "sanity-plugin-dashboard-widget-netlify": "^0.1.4"
   },
   "devDependencies": {
