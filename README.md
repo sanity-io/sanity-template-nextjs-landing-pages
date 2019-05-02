@@ -1,6 +1,6 @@
 # sanity-template-nuxt-events
 
-This template repo is used by Sanity.io to easily create deployed and configured projects through a web interface. You can test it by [creating this project](https://create.sanity.io/?template=sanity-io/sanity-template-nextjs-landing-pages).
+This template repo is used by Sanity.io to easily create deployed and configured projects through a web interface. You can test it by [creating this project](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
 
 The template contains both a Sanity Studio and a front-end in Next.js. Both are deployed on Netlify.
 
