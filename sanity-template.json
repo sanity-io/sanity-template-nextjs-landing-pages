@@ -25,7 +25,8 @@
           "base": "studio",
           "cmd": "npm run build && cp ./netlify.toml dist",
           "dir": "studio/dist"
-        }
+        },
+        "requirements": ["build-hook"]
       }
     },
     {
@@ -43,7 +44,8 @@
         "config": {
           "cmd": "npm run build",
           "dir": "web/out"
-        }
+        },
+        "requirements": ["build-hook"]
       }
     }
   ]
