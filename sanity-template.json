@@ -2,6 +2,11 @@
   "version": 1,
   "title": "Next.js landing pages",
   "description": "An application for editing and rendering landing pages.",
+  "previewMedia": {
+    "type": "image",
+    "src": "assets/frontend.jpg",
+    "alt": "A preview image of the landing pages website."
+  },
   "technologies": [
     {
       "id": "nextjs",
@@ -19,6 +24,7 @@
       "id": "studio",
       "type": "studio",
       "title": "Content Studio",
+      "description": "The Content Studio is where you edit and structure your content.",
       "provider": {
         "name": "netlify",
         "config": {
@@ -27,12 +33,18 @@
           "dir": "studio/dist"
         },
         "requirements": ["build-hook"]
+      },
+      "previewMedia": {
+        "type": "image",
+        "src": "assets/studio.jpg",
+        "alt": "A preview image of the Content Studio."
       }
     },
     {
       "id": "web",
       "type": "web",
       "title": "Frontend",
+      "description": "A Next.js application that can be used as a starting point for a landing pages website.",
       "requiredTokens": [
         {
           "role": "deploy-studio",
@@ -46,6 +58,11 @@
           "dir": "web/out"
         },
         "requirements": ["build-hook"]
+      },
+      "previewMedia": {
+        "type": "image",
+        "src": "assets/frontend.jpg",
+        "alt": "A preview image of the landing pages website."
       }
     }
   ]
