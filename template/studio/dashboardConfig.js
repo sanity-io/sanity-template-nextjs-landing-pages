@@ -17,7 +17,7 @@ export default {
               sites: [
                 {
                   buildHookId: '<#<deployments.studio.providerInfo.buildHookId>#>',
-                  name: 'Content Studio',
+                  name: 'Sanity Studio',
                   siteId: '<#<deployments.studio.providerInfo.siteId>#>'
                 },
                 {

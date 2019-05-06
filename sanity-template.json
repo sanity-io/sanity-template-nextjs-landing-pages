@@ -23,8 +23,8 @@
     {
       "id": "studio",
       "type": "studio",
-      "title": "Content Studio",
-      "description": "The Content Studio is where you edit and structure your content.",
+      "title": "Sanity Studio",
+      "description": "The Sanity Studio is where you edit and structure your content.",
       "provider": {
         "name": "netlify",
         "config": {
@@ -37,7 +37,7 @@
       "previewMedia": {
         "type": "image",
         "src": "assets/studio.jpg",
-        "alt": "A preview image of the Content Studio."
+        "alt": "A preview image of the Sanity Studio."
       }
     },
     {
