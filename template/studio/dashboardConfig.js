@@ -19,13 +19,15 @@ export default {
               sites: [
                 {
                   buildHookId: '<#<deployments.studio.providerInfo.buildHookId>#>',
-                  name: 'Sanity Studio',
-                  siteId: '<#<deployments.studio.providerInfo.siteId>#>'
+                  title: 'Sanity Studio',
+                  name: '<#<deployments.studio.providerInfo.siteName>#>',
+                  apiId: '<#<deployments.studio.providerInfo.siteId>#>'
                 },
                 {
                   buildHookId: '<#<deployments.web.providerInfo.buildHookId>#>',
-                  name: 'Blog Website',
-                  siteId: '<#<deployments.web.providerInfo.siteId>#>'
+                  title: 'Landing pages Website',
+                  name: '<#<deployments.web.providerInfo.siteName>#>',
+                  apiId: '<#<deployments.web.providerInfo.siteId>#>'
                 }
               ]
             }
