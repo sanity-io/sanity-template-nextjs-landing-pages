@@ -63,7 +63,13 @@
         "type": "image",
         "src": "assets/frontend.jpg",
         "alt": "A preview image of the landing pages website."
-      }
+      },
+      "requiredCorsOrigins": [
+        {
+          "origin": "http://localhost:3000",
+          "allowCredentials": true
+        }
+      ]
     }
   ]
 }
