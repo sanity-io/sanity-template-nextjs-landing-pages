@@ -1,11 +1,11 @@
 {
   "version": 1,
   "title": "Next.js landing pages",
-  "description": "An application for editing and rendering landing pages.",
+  "description": "SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action.",
   "previewMedia": {
     "type": "image",
     "src": "assets/frontend.jpg",
-    "alt": "A preview image of the landing pages website."
+    "alt": "A preview image of the Next.js landing pages website."
   },
   "technologies": [
     {
@@ -67,7 +67,7 @@
       "requiredCorsOrigins": [
         {
           "origin": "http://localhost:3000",
-          "allowCredentials": true
+          "allowCredentials": false
         }
       ]
     }
