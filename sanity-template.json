@@ -25,6 +25,7 @@
       "type": "studio",
       "title": "Sanity Studio",
       "description": "The Sanity Studio is where you edit and structure your content.",
+      "dir": "./studio",
       "provider": {
         "name": "netlify",
         "config": {
