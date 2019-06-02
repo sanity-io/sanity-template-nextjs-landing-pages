@@ -10,20 +10,20 @@
     "test": "sanity check"
   },
   "dependencies": {
-    "@sanity/base": "^0.140.17",
-    "@sanity/cli": "^0.140.17",
-    "@sanity/components": "^0.140.20",
-    "@sanity/core": "^0.140.20",
-    "@sanity/dashboard": "^0.140.19",
-    "@sanity/default-layout": "^0.140.20",
+    "@sanity/base": "^0.140.30",
+    "@sanity/cli": "^0.140.30",
+    "@sanity/components": "^0.140.30",
+    "@sanity/core": "^0.140.30",
+    "@sanity/dashboard": "^0.140.30",
+    "@sanity/default-layout": "^0.140.30",
     "@sanity/default-login": "^0.140.15",
-    "@sanity/desk-tool": "^0.140.20",
+    "@sanity/desk-tool": "^0.140.30",
     "bcp47": "^1.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sanity-plugin-dashboard-widget-document-list": "^0.0.8",
-    "sanity-plugin-dashboard-widget-netlify": "^1.0.0"
+    "sanity-plugin-dashboard-widget-netlify": "^1.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
