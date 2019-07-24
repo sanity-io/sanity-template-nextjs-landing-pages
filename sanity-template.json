@@ -46,6 +46,7 @@
       "type": "web",
       "title": "Frontend",
       "description": "A Next.js application that can be used as a starting point for a landing pages website.",
+      "dir": "./web",
       "requiredTokens": [
         {
           "role": "deploy-studio",
