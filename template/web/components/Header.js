@@ -14,7 +14,8 @@ class Header extends Component {
       pathname: PropTypes.string,
       query: PropTypes.shape({
         slug: PropTypes.string
-      })
+      }),
+      events: PropTypes.any
     }),
     title: PropTypes.string,
     navItems: PropTypes.arrayOf(
