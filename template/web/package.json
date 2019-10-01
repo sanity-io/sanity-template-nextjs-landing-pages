@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "<#< repository.name >#>-web",
+  "name": "sanity-nextjs-landing-pages-web",
   "version": "1.0.0",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
