@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-nextjs-landing-pages-studio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
@@ -10,14 +10,14 @@
     "test": "sanity check"
   },
   "dependencies": {
-    "@sanity/base": "^0.x",
-    "@sanity/cli": "^0.x",
-    "@sanity/components": "^0.x",
-    "@sanity/core": "^0.x",
-    "@sanity/dashboard": "^0.x",
-    "@sanity/default-layout": "^0.x",
-    "@sanity/default-login": "^0.x",
-    "@sanity/desk-tool": "^0.x",
+    "@sanity/base": "^0.142",
+    "@sanity/cli": "^0.142",
+    "@sanity/components": "^0.142",
+    "@sanity/core": "^0.142",
+    "@sanity/dashboard": "^0.142",
+    "@sanity/default-layout": "^0.142",
+    "@sanity/default-login": "^0.142",
+    "@sanity/desk-tool": "^0.142",
     "bcp47": "^1.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
