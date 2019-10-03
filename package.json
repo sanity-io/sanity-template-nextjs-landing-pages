@@ -8,7 +8,8 @@
     "copy-studio-node-modules": "cp -R build/studio/node_modules template/studio/node_modules",
     "copy-web-node-modules": "cp -R build/web/node_modules template/web/node_modules",
     "export": "cd build/studio && sanity dataset export landing-pages ../../data/production.tar.gz",
-    "lint-build": "npm run build && (cd build && npm install && npm run lint)"
+    "lint-build": "npm run build && (cd build && npm install && npm run lint)",
+    "test": "npm run build && cd build && npm install && npm run build"
   },
   "devDependencies": {
     "husky": "^3.0.1",
