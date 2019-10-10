@@ -30,8 +30,8 @@
         "name": "netlify",
         "config": {
           "base": "studio",
-          "cmd": "npm run build && cp ./netlify.toml dist",
-          "dir": "studio/dist"
+          "dir": "dist",
+          "cmd": "npm run build && cp ./netlify.toml dist"
         },
         "requirements": ["build-hook"]
       },
@@ -56,8 +56,9 @@
       "provider": {
         "name": "netlify",
         "config": {
-          "cmd": "npm run build",
-          "dir": "web/out"
+          "base": "web",
+          "dir": "out",
+          "cmd": "npm run build"
         },
         "requirements": ["build-hook"]
       },
