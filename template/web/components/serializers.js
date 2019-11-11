@@ -1,8 +1,10 @@
 import EmbedHTML from './EmbedHTML'
+import Figure from './Figure'
 
 const serializers = {
   types: {
-    embedHTML: EmbedHTML
+    embedHTML: EmbedHTML,
+    figure: Figure
   }
 }
 
