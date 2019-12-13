@@ -4,8 +4,8 @@
   "version": "1.0.3",
   "scripts": {
     "build": "lerna run build --parallel",
-    "build-web": "(cd web && npm run build)",
-    "build-studio": "(cd studio && npm run build)",
+    "build-web": "lerna bootstrap && (cd web && npm run build)",
+    "build-studio": "lerna bootstrap && (cd studio && npm run build)",
     "dev": "lerna run dev --parallel",
     "format": "lerna run format",
     "graphql-deploy": "lerna run graphql-deploy",
