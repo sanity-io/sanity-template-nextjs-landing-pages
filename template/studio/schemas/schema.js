@@ -25,7 +25,7 @@ import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
 
 // Localised types
-import localized, { localizeSupportedTypes } from './localization'
+import localized, { localizeSupportedTypes } from '../localization'
 
 const types = [
   cta,

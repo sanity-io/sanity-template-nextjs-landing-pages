@@ -14,6 +14,7 @@
     "@sanity/default-login",
     "@sanity/dashboard",
     "@sanity/desk-tool",
+    "@sanity/language-filter",
     "dashboard-widget-structure-menu",
     "dashboard-widget-document-list",
     "dashboard-widget-netlify"
@@ -30,6 +31,10 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./dashboardConfig.js"
+    },
+    {
+      "name": "part:@sanity/language-filter/config",
+      "path": "./localization/languageFilterConfig.js"
     }
   ]
 }
