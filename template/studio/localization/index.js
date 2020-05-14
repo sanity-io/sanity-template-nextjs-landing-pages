@@ -1,13 +1,13 @@
-import { generateLocaleType, getLocaleTypeName, supportedLanguages } from './localize'
+import {generateLocaleType, getLocaleTypeName, supportedLanguages} from './localize'
 
-const localizedTypes = ['string', 'text', 'slug']
+const localizedTypes = ['string', 'text', 'slug', 'portableText', 'simplePortableText']
 
 const localizeField = (field, traceModified) => {
   if (!localizedTypes.includes(field.type)) return field
 
   const localizedField = {
     ...field,
-    type: getLocaleTypeName(field.type),
+    type: getLocaleTypeName(field.type)
   }
 
   if (traceModified) {
@@ -17,19 +17,19 @@ const localizeField = (field, traceModified) => {
   return localizedField
 }
 
-const inModified = (name) => (field) => field.name === name
+const inModified = name => field => field.name === name
 
-export const localizeSupportedTypes = (typeDef) => {
+export const localizeSupportedTypes = typeDef => {
   const fieldsModified = []
-  const localizedDef = { ...typeDef }
+  const localizedDef = {...typeDef}
 
   // Localize fields
   if (localizedDef.fields) {
-    localizedDef.fields = localizedDef.fields.map((field) => {
+    localizedDef.fields = localizedDef.fields.map(field => {
       if (field.type === 'array') {
         return {
           ...field,
-          of: field.of.map(localizeField),
+          of: field.of.map(localizeField)
         }
       }
 
@@ -37,20 +37,44 @@ export const localizeSupportedTypes = (typeDef) => {
     })
   }
 
-  // Localize any previews
+  if (typeDef.title === 'Route') {
+    console.log('Route config', typeDef)
+    console.log('Route modified', fieldsModified)
+  }
+
+  // Localize any previews to first language
   if (localizedDef.preview && localizedDef.preview.select && fieldsModified.length > 0) {
     localizedDef.preview = {
       ...localizedDef.preview,
       select: Object.keys(localizedDef.preview.select).reduce((select, key) => {
         // Find any fields that have been modified and change name
-        if (!fieldsModified.find(inModified(localizedDef.preview.select[key]))) {
+        let baseKey
+        const selectorToChange = localizedDef.preview.select[key]
+        if (selectorToChange.includes('.')) {
+          baseKey = selectorToChange.substring(0, selectorToChange.indexOf('.'))
+        } else {
+          baseKey = selectorToChange
+        }
+
+        if (!fieldsModified.find(inModified(baseKey))) {
           select[key] = localizedDef.preview.select[key]
         } else {
-          select[key] = `${localizedDef.preview.select[key]}.${supportedLanguages[0].id}`
+          let prefix = selectorToChange
+          let suffix = ''
+          if (selectorToChange.includes('.')) {
+            prefix = selectorToChange.substring(0, selectorToChange.indexOf('.'))
+            suffix = selectorToChange.substring(selectorToChange.indexOf('.'))
+          }
+          select[key] = `${prefix}.${supportedLanguages[0].id}${suffix}`
+          console.log(`Changed key:: `, `${prefix}.${supportedLanguages[0].id}${suffix}`)
         }
         return select
-      }, {}),
+      }, {})
     }
+  }
+
+  if (typeDef.title === 'Route') {
+    console.log('Route config after', localizedDef)
   }
 
   return localizedDef
