@@ -37,11 +37,6 @@ export const localizeSupportedTypes = typeDef => {
     })
   }
 
-  if (typeDef.title === 'Route') {
-    console.log('Route config', typeDef)
-    console.log('Route modified', fieldsModified)
-  }
-
   // Localize any previews to first language
   if (localizedDef.preview && localizedDef.preview.select && fieldsModified.length > 0) {
     localizedDef.preview = {
@@ -66,15 +61,10 @@ export const localizeSupportedTypes = typeDef => {
             suffix = selectorToChange.substring(selectorToChange.indexOf('.'))
           }
           select[key] = `${prefix}.${supportedLanguages[0].id}${suffix}`
-          console.log(`Changed key:: `, `${prefix}.${supportedLanguages[0].id}${suffix}`)
         }
         return select
       }, {})
     }
-  }
-
-  if (typeDef.title === 'Route') {
-    console.log('Route config after', localizedDef)
   }
 
   return localizedDef
