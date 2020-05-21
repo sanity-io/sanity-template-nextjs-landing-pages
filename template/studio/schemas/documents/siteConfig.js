@@ -1,4 +1,5 @@
 import bcp47 from 'bcp47';
+import {supportedLanguages} from '../../localization/localize';
 
 export default {
   name: 'site-config',
@@ -33,7 +34,12 @@ export default {
       type: 'string',
       validation: Rule =>
         Rule.custom(lang =>
-          bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
+          // Will be locale version of field
+          supportedLanguages.reduce((outcome, {id}) => {
+            if (typeof outcome === 'string') return outcome
+            if (!lang[id]) return true
+            return bcp47.parse(lang[id]) ? true : 'Please use a valid bcp47 code'
+          }, true)
         ),
     },
     {

@@ -5,27 +5,10 @@ import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import Layout from '../components/Layout'
 import client from '../client'
+import {localize} from '../utils/localize'
 import RenderSections from '../components/RenderSections'
 
 const builder = imageUrlBuilder(client)
-const pageQuery = groq`
-*[_type == "route" && slug.current == $slug][0]{
-  page-> {
-    ...,
-    content[] {
-      ...,
-      cta {
-        ...,
-        route->
-      },
-      ctas[] {
-        ...,
-        route->
-      }
-    }
-  }
-}
-`
 
 class LandingPage extends Component {
   static propTypes = {
@@ -45,34 +28,55 @@ class LandingPage extends Component {
       console.error('no query')
       return
     }
-    if (slug && slug !== '/') {
-      return client.fetch(pageQuery, {slug}).then(res => ({...res.page, slug}))
-    }
-
-    // Frontpage
-    if (slug && slug === '/') {
-      return client
-        .fetch(
-          groq`
-        *[_id == "global-config"][0]{
-          frontpage -> {
+    if (slug && slug !== `/${query.lang}`) {
+      const pageQuery = groq`
+      *[_type == "route" && slug.${query.lang}.current == $slug][0]{
+        page-> {
+          ...,
+          content[] {
             ...,
-            content[] {
+            cta {
               ...,
-              cta {
-                ...,
-                route->
-              },
-              ctas[] {
-                ...,
-                route->
-              }
+              route->
+            },
+            ctas[] {
+              ...,
+              route->
             }
           }
         }
+      }
       `
-        )
-        .then(res => ({...res.frontpage, slug}))
+
+      const pageRes = await client.fetch(pageQuery, {slug})
+      const localised = localize(pageRes, [query.lang])
+
+      return {...localised.page, slug}
+    }
+
+    // Frontpage
+    if (slug && slug === `/${query.lang}`) {
+      const frontPageRes = await client.fetch(groq`
+      *[_id == "global-config"][0]{
+        frontpage -> {
+          ...,
+          content[] {
+            ...,
+            cta {
+              ...,
+              route->
+            },
+            ctas[] {
+              ...,
+              route->
+            }
+          }
+        }
+      }
+    `, {slug})
+      const localised = localize(frontPageRes, [query.lang])
+
+      return {...localised.page, slug}
     }
 
     return null
