@@ -9,7 +9,10 @@ export default {
     {
       name: 'slug',
       type: 'slug',
-      title: 'Slug'
+      title: 'Slug',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'page',
@@ -37,7 +40,7 @@ export default {
   preview: {
     select: {
       slug: 'slug.current',
-      pageTitle: 'page.title.en'
+      pageTitle: 'page.title'
     },
     prepare ({slug, pageTitle}) {
       return {

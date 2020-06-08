@@ -13,6 +13,9 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Title',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'content',

@@ -25,7 +25,7 @@ import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
 
 // Localised types
-import localized, { localizeSupportedTypes } from '../localization'
+import { localizeDocumentFields, getLocalisedTypes } from '../localization'
 
 const types = [
   cta,
@@ -43,8 +43,8 @@ const types = [
   siteConfig,
   textSection,
 ]
-  .map(localizeSupportedTypes)
-  .concat(localized)
+  .map(localizeDocumentFields)
+  .concat(getLocalisedTypes())
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({

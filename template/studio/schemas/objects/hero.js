@@ -7,6 +7,9 @@ export default {
       name: 'heading',
       type: 'string',
       title: 'Heading',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'tagline',

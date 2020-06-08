@@ -6,7 +6,7 @@ export const supportedLanguages = [
 
 export const getLocaleTypeName = (name) => `locale${name.charAt(0).toUpperCase() + name.slice(1)}`
 
-export const generateLocaleType = (type) => ({
+export const generateLocaleType = (type) => console.log(`Generating locale type:: `, type) || ({
   title: type,
   name: getLocaleTypeName(type),
   type: 'object',
