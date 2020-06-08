@@ -5,6 +5,12 @@ import {withRouter} from 'next/router'
 import styles from './Footer.module.css'
 import SimpleBlockContent from './SimpleBlockContent'
 
+const languages = [
+  {code: 'en', label: 'English'},
+  {code: 'nb', label: 'Norwegian'},
+  {code: 'es', label: 'Spanish'}
+]
+
 function Footer (props) {
   const {navItems, text, router} = props
   return (
@@ -31,6 +37,11 @@ function Footer (props) {
               )
             })}
         </ul>
+        <select onChange={(event) => router.push(`/${event.target.value}`)} className={styles.lang} value={router.query.lang}>
+          {languages.map(lang => (
+            <option key={lang.code} value={lang.code}>{lang.label}</option>
+          ))}
+        </select>
       </nav>
       <div className={styles.text}>
         <SimpleBlockContent blocks={text} />
@@ -52,8 +63,10 @@ Footer.propTypes = {
   router: PropTypes.shape({
     pathname: PropTypes.string,
     query: PropTypes.shape({
+      lang: PropTypes.string,
       slug: PropTypes.string
-    })
+    }),
+    push: PropTypes.func
   })
 }
 

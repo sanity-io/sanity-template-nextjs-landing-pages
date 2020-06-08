@@ -25,7 +25,7 @@ const reduceRoutes = (obj, route) => {
   Object.keys(slug).forEach(lang => {
     if (lang === '_type') return
 
-    const path = slug[lang].current === '/' ? `/${lang}` : `/${lang}/${slug[lang].current}`
+    const path = slug[lang].current === '/' ? `/` : `/${slug[lang].current}`
     obj[path] = {
       query: {
         slug: slug[lang].current,
