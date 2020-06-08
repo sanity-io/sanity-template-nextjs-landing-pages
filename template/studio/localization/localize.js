@@ -1,3 +1,4 @@
+// You can add/edit/remove supported languages in this array. Remember that you’ll need to update your content accordingly if you edit or remove a language here.
 export const supportedLanguages = [
   { id: 'en', title: 'English' },
   { id: 'es', title: 'Spanish' },
