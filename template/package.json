@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-nextjs-landing-pages",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "build": "lerna run build --parallel",
     "build-web": "lerna bootstrap && (cd web && npm run build)",
@@ -14,7 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@sanity/cli": "^1.149.13",
+    "@sanity/cli": "^1.149.16",
     "lerna": "^3.9.0"
   }
 }
