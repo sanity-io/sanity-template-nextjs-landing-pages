@@ -34,6 +34,9 @@ export default {
       title: 'Description',
       description: 'This description populates meta-tags on the webpage',
       fieldset: 'metadata',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'openGraphImage',

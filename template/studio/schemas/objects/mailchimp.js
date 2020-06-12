@@ -7,11 +7,17 @@ export default {
       name: 'heading',
       type: 'string',
       title: 'Heading',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'subtitle',
       type: 'string',
       title: 'Subheading',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'actionUrl',

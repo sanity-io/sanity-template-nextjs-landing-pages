@@ -13,6 +13,9 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Site title',
+      options: {
+        localization: true
+      }
     },
     {
       title: 'URL',
@@ -41,6 +44,9 @@ export default {
             return bcp47.parse(lang[id]) ? true : 'Please use a valid bcp47 code'
           }, true)
         ),
+      options: {
+        localization: true
+      }
     },
     {
       title: 'Brand logo',
@@ -96,6 +102,14 @@ export default {
       name: 'footerText',
       type: 'simplePortableText',
       fieldset: 'footer',
+      options: {
+        localization: true
+      }
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+  }
 };
