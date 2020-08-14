@@ -13,6 +13,9 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Title',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'content',
@@ -31,6 +34,9 @@ export default {
       title: 'Description',
       description: 'This description populates meta-tags on the webpage',
       fieldset: 'metadata',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'openGraphImage',

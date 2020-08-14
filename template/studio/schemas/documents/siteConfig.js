@@ -1,4 +1,5 @@
 import bcp47 from 'bcp47';
+import {supportedLanguages} from '../../localization/localize';
 
 export default {
   name: 'site-config',
@@ -12,6 +13,9 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Site title',
+      options: {
+        localization: true
+      }
     },
     {
       title: 'URL',
@@ -33,8 +37,16 @@ export default {
       type: 'string',
       validation: Rule =>
         Rule.custom(lang =>
-          bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
+          // Will be locale version of field
+          supportedLanguages.reduce((outcome, {id}) => {
+            if (typeof outcome === 'string') return outcome
+            if (!lang[id]) return true
+            return bcp47.parse(lang[id]) ? true : 'Please use a valid bcp47 code'
+          }, true)
         ),
+      options: {
+        localization: true
+      }
     },
     {
       title: 'Brand logo',
@@ -90,6 +102,14 @@ export default {
       name: 'footerText',
       type: 'simplePortableText',
       fieldset: 'footer',
+      options: {
+        localization: true
+      }
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+  }
 };

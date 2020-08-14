@@ -7,16 +7,25 @@ export default {
       name: 'heading',
       type: 'string',
       title: 'Heading',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'label',
       type: 'string',
       title: 'Label',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'text',
       type: 'simplePortableText',
       title: 'Text',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'image',

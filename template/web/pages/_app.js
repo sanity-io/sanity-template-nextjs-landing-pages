@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseApp, {Container} from 'next/app'
+import {localize} from '../utils/localize'
 import client from '../client'
 // import 'normalize.css'
 import '../styles/shared.module.css'
@@ -34,7 +35,7 @@ class App extends BaseApp {
         return {pageProps}
       }
       if (config && pageProps) {
-        pageProps.config = config
+        pageProps.config = localize(config, [ctx.query.lang])
       }
 
       return {pageProps}

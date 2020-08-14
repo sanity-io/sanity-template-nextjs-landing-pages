@@ -7,11 +7,17 @@ export default {
       name: 'heading',
       type: 'string',
       title: 'Heading',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'tagline',
       type: 'simplePortableText',
       title: 'Tagline',
+      options: {
+        localization: true
+      }
     },
     {
       name: 'backgroundImage',

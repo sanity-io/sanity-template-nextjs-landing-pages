@@ -20,17 +20,24 @@ const reduceRoutes = (obj, route) => {
   const {page = {}, slug = {}} = route
   const {_createdAt, _updatedAt} = page
   const {includeInSitemap, disallowRobot} = route
-  const path = route['slug']['current'] === '/' ? '/' : `/${route['slug']['current']}`
-  obj[path] = {
-    query: {
-      slug: slug.current
-    },
-    includeInSitemap,
-    disallowRobot,
-    _createdAt,
-    _updatedAt,
-    page: '/LandingPage'
-  }
+
+  // Generate a page for each language
+  Object.keys(slug).forEach(lang => {
+    if (lang === '_type') return
+
+    const path = slug[lang].current === '/' ? `/` : `/${slug[lang].current}`
+    obj[path] = {
+      query: {
+        slug: slug[lang].current,
+        lang: lang
+      },
+      includeInSitemap,
+      disallowRobot,
+      _createdAt,
+      _updatedAt,
+      page: '/LandingPage'
+    }
+  })
   return obj
 }
 
@@ -45,8 +52,13 @@ module.exports = withCSS({
       const {routes = []} = res
       const nextRoutes = {
         // Routes imported from sanity
-        ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {}),
-        '/custom-page': {page: '/CustomPage'}
+        ...routes.filter(({slug}) => slug).reduce(reduceRoutes, {}),
+        '/custom-page': {
+          page: '/CustomPage',
+          query: {
+            lang: `en`
+          }
+        }
       }
       return nextRoutes
     })
