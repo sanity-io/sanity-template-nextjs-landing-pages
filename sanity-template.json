@@ -7,8 +7,7 @@
     "src": "assets/frontend.jpg",
     "alt": "A preview image of the Next.js landing pages website."
   },
-  "technologies": [
-    {
+  "technologies": [{
       "id": "nextjs",
       "name": "Next.js",
       "url": "https://nextjs.org/"
@@ -19,8 +18,7 @@
       "url": "https://www.netlify.com/"
     }
   ],
-  "deployments": [
-    {
+  "deployments": [{
       "id": "studio",
       "type": "studio",
       "title": "Sanity Studio",
@@ -31,7 +29,7 @@
         "config": {
           "base": "/",
           "dir": "/studio/dist",
-          "cmd": "npm run build && cp studio/netlify.toml studio/dist"
+          "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist"
         },
         "requirements": ["build-hook"]
       },
@@ -47,18 +45,16 @@
       "title": "Frontend",
       "description": "A Next.js application that can be used as a starting point for a landing pages website.",
       "dir": "./web",
-      "requiredTokens": [
-        {
-          "role": "deploy-studio",
-          "label": "GraphQL API Deployer"
-        }
-      ],
+      "requiredTokens": [{
+        "role": "deploy-studio",
+        "label": "GraphQL API Deployer"
+      }],
       "provider": {
         "name": "netlify",
         "config": {
           "base": "/",
           "dir": "/web/out",
-          "cmd": "npm run build"
+          "cmd": "npm run build-web"
         },
         "requirements": ["build-hook"]
       },
@@ -67,12 +63,10 @@
         "src": "assets/frontend.jpg",
         "alt": "A preview image of the landing pages website."
       },
-      "requiredCorsOrigins": [
-        {
-          "origin": "http://localhost:3000",
-          "allowCredentials": false
-        }
-      ]
+      "requiredCorsOrigins": [{
+        "origin": "http://localhost:3000",
+        "allowCredentials": false
+      }]
     }
   ]
 }
