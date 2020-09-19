@@ -16,7 +16,7 @@
     "@sanity/image-url": "^0.140.19",
     "@zeit/next-css": "^1.0.1",
     "groq": "^0.140.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "next": "^8.1.0",
     "next-seo": "^1.11.2",
     "react": "^16.13.1",
