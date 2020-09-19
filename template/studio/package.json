@@ -18,6 +18,7 @@
     "@sanity/default-layout": "^1.150",
     "@sanity/default-login": "^1.150",
     "@sanity/desk-tool": "^1.150",
+    "@sanity/studio-hints": "^1.150.7",
     "bcp47": "^1.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
