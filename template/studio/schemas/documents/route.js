@@ -1,4 +1,4 @@
-import { MdLink } from 'react-icons/lib/md';
+import { MdLink } from "react-icons/md";
 
 export default {
   name: 'route',
