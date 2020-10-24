@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-nextjs-landing-pages-studio",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
