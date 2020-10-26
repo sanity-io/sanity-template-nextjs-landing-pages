@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "title": "Next.js landing pages",
   "description": "SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action.",
   "previewMedia": {
@@ -7,7 +7,8 @@
     "src": "assets/frontend.jpg",
     "alt": "A preview image of the Next.js landing pages website."
   },
-  "technologies": [{
+  "technologies": [
+    {
       "id": "nextjs",
       "name": "Next.js",
       "url": "https://nextjs.org/"
@@ -18,55 +19,61 @@
       "url": "https://www.netlify.com/"
     }
   ],
-  "deployments": [{
-      "id": "studio",
-      "type": "studio",
-      "title": "Sanity Studio",
-      "description": "The Sanity Studio is where you edit and structure your content.",
-      "dir": "./studio",
-      "provider": {
-        "name": "netlify",
-        "config": {
+  "deployment": {
+    "provider": "netlify",
+    "sites": [
+      {
+        "id": "studio",
+        "type": "studio",
+        "title": "Sanity Studio",
+        "description": "The Sanity Studio is where you edit and structure your content.",
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/studio.jpg",
+          "alt": "A preview image of the Sanity Studio."
+        },
+        "buildSettings": {
           "base": "/",
           "dir": "/studio/dist",
           "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist"
         },
-        "requirements": ["build-hook"]
+        "dir": "./studio",
+        "requirements": [
+          "build-hook"
+        ]
       },
-      "previewMedia": {
-        "type": "image",
-        "src": "assets/studio.jpg",
-        "alt": "A preview image of the Sanity Studio."
-      }
-    },
-    {
-      "id": "web",
-      "type": "web",
-      "title": "Frontend",
-      "description": "A Next.js application that can be used as a starting point for a landing pages website.",
-      "dir": "./web",
-      "requiredTokens": [{
-        "role": "deploy-studio",
-        "label": "GraphQL API Deployer"
-      }],
-      "provider": {
-        "name": "netlify",
-        "config": {
+      {
+        "id": "web",
+        "type": "web",
+        "title": "Frontend",
+        "description": "A Next.js application that can be used as a starting point for a landing pages website.",
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/frontend.jpg",
+          "alt": "A preview image of the landing pages website."
+        },
+        "buildSettings": {
           "base": "/",
           "dir": "/web/out",
           "cmd": "npm run build-web"
         },
-        "requirements": ["build-hook"]
-      },
-      "previewMedia": {
-        "type": "image",
-        "src": "assets/frontend.jpg",
-        "alt": "A preview image of the landing pages website."
-      },
-      "requiredCorsOrigins": [{
-        "origin": "http://localhost:3000",
-        "allowCredentials": false
-      }]
-    }
-  ]
+        "dir": "./web",
+        "requiredCorsOrigins": [
+          {
+            "origin": "http://localhost:3000",
+            "allowCredentials": false
+          }
+        ],
+        "requiredTokens": [
+          {
+            "role": "deploy-studio",
+            "label": "GraphQL API Deployer"
+          }
+        ],
+        "requirements": [
+          "build-hook"
+        ]
+      }
+    ]
+  }
 }
