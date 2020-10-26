@@ -1,4 +1,4 @@
-@import './custom-properties.css';
+@import 'custom-properties.css';
 
 html {
   font-family: var(--font-family-sans);

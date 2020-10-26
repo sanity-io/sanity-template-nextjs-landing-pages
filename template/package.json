@@ -3,18 +3,45 @@
   "name": "sanity-nextjs-landing-pages",
   "version": "1.0.12",
   "scripts": {
-    "build": "lerna run build --parallel",
-    "build-web": "lerna bootstrap && (cd web && npm run build)",
-    "build-studio": "lerna bootstrap && (cd studio && npm run build)",
-    "dev": "lerna run dev --parallel",
+    "dev": "concurrently \"next --port $PORT\" \"cd studio && sanity start\"",
+    "_build": "next build",
+    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && next build",
+    "start": "vercel dev",
     "format": "lerna run format",
-    "graphql-deploy": "lerna run graphql-deploy",
     "lint": "lerna run lint",
-    "postinstall": "lerna bootstrap",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "lerna bootstrap"
+  },
+  "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/client": "^2.0.0",
+    "@sanity/image-url": "^0.140.19",
+    "@zeit/next-css": "^1.0.1",
+    "groq": "^0.140.0",
+    "lodash": "^4.17.11",
+    "next": "^8.1.0",
+    "next-seo": "^1.11.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-inlinesvg": "^0.8.4",
+    "react-mailchimp-form": "^1.0.1",
+    "react-mailchimp-subscribe": "^2.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.6.0"
   },
   "devDependencies": {
     "@sanity/cli": "^2.0.0",
-    "lerna": "^3.9.0"
+    "babel-eslint": "^10.0.1",
+    "concurrently": "^5.3.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "lerna": "^3.9.0",
+    "sitemap": "^6.3.2"
   }
 }

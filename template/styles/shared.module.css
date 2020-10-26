@@ -1,5 +1,5 @@
-@import './custom-media.css';
-@import './custom-properties.css';
+@import 'custom-media.css';
+@import 'custom-properties.css';
 
 .center {
   display: flex;

@@ -1,11 +1,12 @@
 {
   "root": true,
   "project": {
-    "name": "<#< sanity.projectTitle >#>"
+    "name": "nextjs-landing-pages",
+    "basePath": "/studio"
   },
   "api": {
-    "projectId": "<#< sanity.projectId >#>",
-    "dataset": "<#< sanity.dataset >#>"
+    "projectId": "placeholder",
+    "dataset": "placeholder"
   },
   "plugins": [
     "@sanity/base",
@@ -16,7 +17,6 @@
     "@sanity/desk-tool",
     "dashboard-widget-structure-menu",
     "dashboard-widget-document-list",
-    "dashboard-widget-netlify",
     "@sanity/studio-hints"
   ],
   "parts": [{
