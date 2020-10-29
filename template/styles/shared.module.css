@@ -1,6 +1,3 @@
-@import 'custom-media.css';
-@import 'custom-properties.css';
-
 .center {
   display: flex;
   justify-content: center;

@@ -1,4 +1,7 @@
-module.exports = ({file, options, env}) => ({
+
+const env = process.env.NODE_ENV
+
+module.exports = ({
   plugins: {
     'postcss-import': {},
     cssnano: env === 'production' ? {} : false,

@@ -1,6 +1,3 @@
-@import "../styles/custom-media.css";
-@import "../styles/custom-properties.css";
-
 .root {
   position: relative;
   color: var(--color-black, #000);
