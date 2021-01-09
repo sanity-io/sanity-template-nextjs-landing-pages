@@ -1,5 +1,5 @@
 import React from 'react'
-import BaseApp, {Container} from 'next/app'
+import App from 'next/app'
 import client from '../client'
 // import 'normalize.css'
 import '../styles/shared.module.css'
@@ -20,35 +20,17 @@ const siteConfigQuery = `
   }[0]
   `
 
-class App extends BaseApp {
-  static async getInitialProps ({Component, ctx}) {
-    let pageProps = {}
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    // Add site config from sanity
-    return client.fetch(siteConfigQuery).then(config => {
-      if (!config) {
-        return {pageProps}
-      }
-      if (config && pageProps) {
-        pageProps.config = config
-      }
-
-      return {pageProps}
-    })
-  }
-
-  render () {
-    const {Component, pageProps} = this.props
-    return (
-      <Container>
-        <Component {...pageProps} />
-      </Container>
-    )
-  }
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
 
-export default App
+MyApp.getInitialProps = async (appContext) => {
+  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  const appProps = await App.getInitialProps(appContext)
+  // Add site config from sanity
+  const config = await client.fetch(siteConfigQuery)
+  if (config) appProps.pageProps.config = config
+  return { ...appProps }
+}
+
+export default MyApp
