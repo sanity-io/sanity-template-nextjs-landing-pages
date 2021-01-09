@@ -1,5 +1,3 @@
-@import '../styles/custom-properties.css';
-
 .root {
   color: var(--color-black, #333);
   font-size: var(--font-small-size);
