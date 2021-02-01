@@ -1,5 +1,5 @@
 import React from 'react'
-import BaseApp, {Container} from 'next/app'
+import BaseApp from 'next/app'
 import client from '../client'
 // import 'normalize.css'
 import '../styles/shared.module.css'
@@ -44,9 +44,7 @@ class App extends BaseApp {
   render () {
     const {Component, pageProps} = this.props
     return (
-      <Container>
-        <Component {...pageProps} />
-      </Container>
+      <Component {...pageProps} />
     )
   }
 }
