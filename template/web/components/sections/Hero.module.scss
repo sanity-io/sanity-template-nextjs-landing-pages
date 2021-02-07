@@ -1,8 +1,7 @@
-@import '../../styles/custom-media.css';
-@import '../../styles/custom-properties.css';
+@import '../../styles/shared.module';
 
 .root {
-  composes: center from '../../styles/shared.module.css';
+  composes: center;
   position: relative;
   background-color: var(--color-black, #000);
   color: var(--color-white, #fff);
@@ -14,17 +13,21 @@
   @media (--media-min-medium) {
     padding-bottom: 4rem;
   }
-}
 
-.root::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background-image: linear-gradient(#2220, #222e);
-  width: 100%;
-  height: 50%;
-  z-index: 0;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-image: linear-gradient(#2220, #222e);
+    width: 100%;
+    height: 50%;
+    z-index: 0;
+  }
+
+  p a {
+    color: inherit;
+  }
 }
 
 .content {
@@ -52,6 +55,7 @@
   }
 }
 
+.tagline > div,
 .tagline {
   position: relative;
   margin: 0;
@@ -73,12 +77,7 @@
 .ctas {
   margin-top: 3rem;
   display: flex;
-}
-
-.ctas > *:not(:first-child) {
-  margin-left: 1rem;
-}
-
-.root p a {
-  color: inherit;
+  > *:not(:first-child) {
+    margin-left: 1rem;
+  }
 }

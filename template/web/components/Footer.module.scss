@@ -1,7 +1,7 @@
-@import '../styles/custom-properties.css';
+@import "../styles/shared.module";
 
 .root {
-  color: var(--color-black, #333);
+  color: var(--primary_color, #333);
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
   padding: 2rem 0;
@@ -16,22 +16,23 @@
 }
 
 .item {
-  @nest & > a {
+  > a {
     display: block;
     text-decoration: none;
     color: inherit;
     padding: 1.5rem 0.5rem;
+    @include pressable_button_effect(1);
   }
 }
 
 .text {
   text-align: center;
 
-  @nest & p {
+  p {
     margin: 1rem 0;
   }
 
-  @nest & a {
+  a {
     color: inherit;
   }
 }

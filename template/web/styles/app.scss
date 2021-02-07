@@ -1,0 +1,65 @@
+
+a:-webkit-any-link {
+  color: hsl(271, 68%, 32%);//-webkit-link;
+  @media(prefers-color-scheme: dark) {
+    color: hsl(271, 68%, 68%);//-webkit-link;
+  }
+}
+
+:root {
+    /* Typography */
+    --primary_color: black;
+    --secondary_color: white;
+    --terciary_color: yellow;
+    --shadow_opacity: 0.9;
+    --white_shadow: rgba(255, 255, 255, var(--shadow_opacity));
+    --black_shadow: rgba(0, 0, 0, var(--shadow_opacity));
+    --translucent_black: rgba(0, 0, 0, 0.95);
+    --translucent_white: rgba(255, 255, 255, 0.95);
+    --primary_translucent_shadow: var(--translucent_black);
+    --secondary_translucent_shadow: var(--translucent_white);
+    --very_bright: 1;
+    --very_dark: 0.3;
+    --primary_brightness: var(--very_bright);
+    --secondary_brightness: var(--very_dark);
+    --primary_shadow: var(--white_shadow);
+    --secondary_shadow: var(--black_shadow);
+    --primary_to_green: rgb(20, 133, 0, 0.99);
+    --secondary_to_green: rgb(20, 133, 0, 0.99);
+    @media(prefers-color-scheme: dark) {
+      --primary_from_green: rgb(20, 133, 0, 0.4);
+      --secondary_from_green: rgb(20, 122, 0, 0.4);
+      --primary_shadow: var(--black_shadow);
+      --secondary_shadow: var(--white_shadow);
+      --primary_brightness: var(--very_dark);
+      --secondary_brightness: var(--very_bright);
+      --primary_color: white;
+      --secondary_color: black;
+      --primary_translucent_shadow: var(--translucent_white);
+      --secondary_translucent_shadow: var(--translucent_black);
+    }
+    --unit: 16;
+    --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
+    --font-micro-line-height: calc(12 / 10); /* 12px */
+    --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
+    --font-small-line-height: calc(21 / 14); /* 21px */
+    --font-base-size: 1em; /* 16px */
+    --font-base-line-height: calc(24 / var(--unit)); /* 24px */
+    --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
+    --font-large-line-height: calc(27 / 18); /* 27px */
+  
+    --font-title3-size: calc(21 / var(--unit) * 1rem); /* 21px */
+    --font-title3-line-height: calc(30 / 21); /* 30px */
+    --font-title2-size: calc(24 / var(--unit) * 1rem); /* 24px */
+    --font-title2-line-height: calc(33 / 24); /* 33px */
+    --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
+    --font-title1-line-height: calc(57 / 49); /* 57px */
+  
+    /* Widths */
+    --width-x-small: 20em;
+    --width-small: 40em;
+    --width-medium: 60em;
+    --width-large: 80em;
+    --width-x-large: 100em;
+  }
+  

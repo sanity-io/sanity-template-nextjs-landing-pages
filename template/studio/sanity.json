@@ -16,10 +16,10 @@
     "@sanity/desk-tool",
     "dashboard-widget-structure-menu",
     "dashboard-widget-document-list",
-    "dashboard-widget-netlify",
-    "@sanity/studio-hints"
+    "dashboard-widget-netlify"
   ],
-  "parts": [{
+  "parts": [
+    {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
     },
@@ -30,10 +30,6 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./dashboardConfig.js"
-    },
-    {
-      "implements": "part:@sanity/default-layout/studio-hints-config",
-      "path": "./studioHintsConfig.js"
     }
   ]
 }

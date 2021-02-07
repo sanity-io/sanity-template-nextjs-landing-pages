@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
-import styles from './Header.module.css'
+import styles from './Header.module.scss'
 import HamburgerIcon from './icons/Hamburger'
 
 class Header extends Component {
@@ -82,7 +82,6 @@ class Header extends Component {
               }
             }}
             as='/'
-            prefetch
           >
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
@@ -102,7 +101,6 @@ class Header extends Component {
                         query: {slug: slug.current}
                       }}
                       as={`/${slug.current}`}
-                      prefetch
                     >
                       <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
                     </Link>

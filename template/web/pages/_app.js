@@ -1,9 +1,10 @@
 import React from 'react'
-import BaseApp, {Container} from 'next/app'
+import BaseApp from 'next/app'
 import client from '../client'
 // import 'normalize.css'
-import '../styles/shared.module.css'
-import '../styles/layout.css'
+import '../styles/app.scss'
+import '../styles/shared.module.scss'
+import '../styles/layout.scss'
 
 const siteConfigQuery = `
   *[_id == "global-config"] {
@@ -44,9 +45,7 @@ class App extends BaseApp {
   render () {
     const {Component, pageProps} = this.props
     return (
-      <Container>
-        <Component {...pageProps} />
-      </Container>
+      <Component {...pageProps} />
     )
   }
 }

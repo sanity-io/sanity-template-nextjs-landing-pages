@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {withRouter} from 'next/router'
-import styles from './Footer.module.css'
+import styles from './Footer.module.scss'
 import SimpleBlockContent from './SimpleBlockContent'
 
 function Footer (props) {
@@ -23,7 +23,6 @@ function Footer (props) {
                       query: {slug: item.slug.current}
                     }}
                     as={`/${item.slug.current}`}
-                    prefetch
                   >
                     <a data-is-active={isActive ? 'true' : 'false'}>{item.title}</a>
                   </Link>
