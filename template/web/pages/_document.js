@@ -20,7 +20,6 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
           <link rel="manifest" href="/static/site.webmanifest" />
         </Head>
-        <Head />
         <body>
           <Main />
           <NextScript />

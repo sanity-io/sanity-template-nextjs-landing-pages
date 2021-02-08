@@ -6,8 +6,8 @@ module.exports = {
         'color-mod-function': {unresolved: 'warn'},
         'nesting-rules': true
       },
-      'postcss-import': {},
-      cssnano: process.env.NODE_ENV === 'production' ? {} : false
-    }
+    },
+    'postcss-import': {},
+    cssnano: process.env.NODE_ENV === 'production' ? {} : false
   }
 }
