@@ -5,7 +5,7 @@ export default {
   type: 'document',
   title: 'Site configuration',
   // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
-  __experimental_actions: [/* create, delete, */ 'update', 'publish'],
+  __experimental_actions: [/* "create", "delete", */ 'update', 'publish'],
   fieldsets: [{ name: 'footer', title: 'Footer' }],
   fields: [
     {
