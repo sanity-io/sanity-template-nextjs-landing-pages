@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import MailchimpForm from 'react-mailchimp-form'
-import styles from './Mailchimp.module.css'
+import styles from './Mailchimp.module.scss'
 
 export default function Mailchimp (props) {
   const {heading, subtitle, actionUrl} = props

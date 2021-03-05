@@ -1,5 +1,4 @@
-@import "../styles/custom-media.css";
-@import '../styles/custom-properties.css';
+@import '../../styles/shared.module';
 
 .root {
   position: relative;
@@ -37,7 +36,7 @@
   margin: 0 1.5rem;
   max-width: var(--width-medium);
 
-  @nest & figcaption {
+  figcaption {
     width: 100%;
     box-sizing: border-box;
   }
@@ -46,7 +45,7 @@
     margin: 0 auto;
     padding-top: 2rem;
 
-    @nest & figcaption {
+    figcaption {
       position: absolute;
       top: 0;
     }

@@ -1,4 +1,3 @@
-const withCSS = require('@zeit/next-css')
 const client = require('./client')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -34,7 +33,7 @@ const reduceRoutes = (obj, route) => {
   return obj
 }
 
-module.exports = withCSS({
+module.exports = {
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
@@ -51,4 +50,4 @@ module.exports = withCSS({
       return nextRoutes
     })
   }
-})
+}

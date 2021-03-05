@@ -1,0 +1,99 @@
+@use "sass:list";
+@import 'custom-media';
+
+.title
+.root{
+  --wide-container: 60rem;
+  --narrow-container: 40rem;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@function arrange($element, $number) {
+  $list: ();
+  @for $i from 1 through $number {
+    $list: list.append($list, $element);
+  }
+  @return $list;
+}
+
+@function make_progressive_shadow($step, $color_list, $start_index, $number_elements) {
+  $list: ();
+  @for $i from $start_index through $start_index + $number_elements - 1 {
+    $list: list.append(
+      $list,
+      make_text_shadow($step, list.nth($color_list, $i - $start_index + 1), $i),
+      $separator: space
+    );
+  }
+  @return $list;
+}
+
+@function make_text_shadow($step, $color, $i) {
+  @return dropshadow(12px 12px 5px $color);
+}
+
+@function make_omni_shadow($sizeX, $sizeY, $deepth, $color) {
+  @return $sizeX $sizeY $deepth $color;
+}
+
+@function make_omnipresent_shadow($size, $deepth, $color) {
+  $table: (($size*-1 $size*-1), ($size*1 $size*1), ($size*-1 $size*1), ($size*1 $size*-1));
+  $list: ();
+  @for $i from 1 through 4 {
+    $list: list.append(
+      $list,
+      make_omni_shadow(list.nth(list.nth($table, $i), 1), list.nth(list.nth($table, $i), 2), $deepth, $color),
+      $separator: comma
+    );
+  }
+  @return $list;
+}
+
+@function make_omnipresent_shadow2($size, $deepth, $color) {
+  $table: (($size*-1 $size*-1), ($size*1 $size*1), ($size*-1 $size*1), ($size*1 $size*-1));
+  $list: ();
+  @for $i from 1 through 4 {
+    $list: list.append(
+      $list,
+      drop-shadow(list.nth(list.nth($table, $i), 1) list.nth(list.nth($table, $i), 2) $deepth $color),
+      $separator: space
+    );
+  }
+  @return $list;
+}
+
+@mixin pressable_button_effect($scale_up_factor){
+  transition: transform 50ms ease-in-out;
+  transform: scale($scale_up_factor*1);
+  &:hover {
+    transform: scale($scale_up_factor*1.05);
+  }  
+  &:active {
+    transform: scale($scale_up_factor*0.95);
+  }  
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  margin: 0 1rem;
+
+  @media (--typography-breakpoint) {
+    margin: 0;
+    width: 100%;
+  }
+  .normal-container {
+    @media (--typography-breakpoint) {
+      max-width: var(--wide-container, 60rem);
+    }
+  }
+  .narrow-container { 
+    @media (--typography-breakpoint) {
+      max-width: var(--narrow-container, 30rem);
+    }
+  }
+}

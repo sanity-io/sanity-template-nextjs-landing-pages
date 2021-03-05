@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import styles from './Cta.module.css'
+import styles from './Cta.module.scss'
 
 function cta (props) {
   const {title, route, link} = props
