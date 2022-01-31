@@ -12,8 +12,8 @@
     "test": "npm run build && cd build && npm install && npm run build"
   },
   "devDependencies": {
-    "husky": "^3.0.1",
-    "sanity-template": "^1.0.3"
+    "husky": "^7.0.4",
+    "sanity-template": "^2.4.3"
   },
   "husky": {
     "hooks": {
