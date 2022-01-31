@@ -1,24 +1,32 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import BlockContent from '@sanity/block-content-to-react'
-import client from '../client'
-import serializers from './serializers'
+import React from "react";
+import PropTypes from "prop-types";
+import { PortableText } from "@portabletext/react";
+import EmbedHTML from "./EmbedHTML";
+import Figure from "./Figure";
 
-const {projectId, dataset} = client.config()
-
-function SimpleBlockContent (props) {
-  const {blocks} = props
+function SimpleBlockContent(props) {
+  const { blocks } = props;
 
   if (!blocks) {
-    console.error('Missing blocks')
-    return null
+    console.error("Missing blocks");
+    return null;
   }
 
-  return <BlockContent blocks={blocks} serializers={serializers} projectId={projectId} dataset={dataset} />
+  return (
+    <PortableText
+      value={blocks}
+      components={{
+        types: {
+          embedHTML: EmbedHTML,
+          figure: Figure,
+        },
+      }}
+    />
+  );
 }
 
 SimpleBlockContent.propTypes = {
-  blocks: PropTypes.arrayOf(PropTypes.object)
-}
+  blocks: PropTypes.arrayOf(PropTypes.object),
+};
 
-export default SimpleBlockContent
+export default SimpleBlockContent;
