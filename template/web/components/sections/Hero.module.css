@@ -1,8 +1,7 @@
-@import '../../styles/custom-media.css';
-@import '../../styles/custom-properties.css';
+@import "../../styles/custom-media.css";
 
 .root {
-  composes: center from '../../styles/shared.module.css';
+  composes: center from "../../styles/shared.module.css";
   position: relative;
   background-color: var(--color-black, #000);
   color: var(--color-white, #fff);
@@ -17,7 +16,7 @@
 }
 
 .root::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;

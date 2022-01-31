@@ -1,7 +1,5 @@
-const withCSS = require('@zeit/next-css')
 const client = require('./client')
 
-const isProduction = process.env.NODE_ENV === 'production'
 const query = `
 {
   "routes": *[_type == "route"] {
@@ -34,12 +32,7 @@ const reduceRoutes = (obj, route) => {
   return obj
 }
 
-module.exports = withCSS({
-  cssModules: true,
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: isProduction ? '[hash:base64:5]' : '[name]__[local]___[hash:base64:5]'
-  },
+module.exports = {
   exportPathMap: function () {
     return client.fetch(query).then(res => {
       const {routes = []} = res
@@ -51,4 +44,4 @@ module.exports = withCSS({
       return nextRoutes
     })
   }
-})
+}

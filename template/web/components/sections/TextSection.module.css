@@ -1,5 +1,4 @@
-@import '../../styles/custom-media.css';
-@import '../../styles/custom-properties.css';
+@import "../../styles/custom-media.css";
 
 .root {
   padding: 2rem 0;
@@ -30,6 +29,6 @@
   line-height: var(--font-title3-line-height);
 }
 
-.label+.heading {
+.label + .heading {
   margin-top: 0.25em;
 }
