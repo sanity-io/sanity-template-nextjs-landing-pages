@@ -1,10 +1,10 @@
-import { MdLink } from "react-icons/md";
+import { LinkIcon } from '@sanity/icons'
 
 export default {
   name: 'route',
   type: 'document',
   title: 'Route',
-  icon: MdLink,
+  icon: LinkIcon,
   fields: [
     {
       name: 'slug',
@@ -43,7 +43,7 @@ export default {
       return {
         title: slug === '/' ? '/' : `/${slug}`,
         subtitle: `Page: ${pageTitle}`,
-      };
+      }
     },
   },
-};
+}

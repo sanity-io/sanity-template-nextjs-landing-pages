@@ -23,7 +23,6 @@
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
     "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
     "sanity-plugin-dashboard-widget-netlify": "^1.2.1",
     "styled-components": "^5.3.3"
