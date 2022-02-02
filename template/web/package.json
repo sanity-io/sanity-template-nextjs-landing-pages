@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "sanity-nextjs-landing-pages-web",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "dev": "next",
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^1.0.1",
-    "@sanity/client": "^2.23.2",
+    "@sanity/client": "^3.0.0",
     "@sanity/image-url": "^1.0.1",
     "@zeit/next-css": "^1.0.1",
     "groq": "^2.15.0",
