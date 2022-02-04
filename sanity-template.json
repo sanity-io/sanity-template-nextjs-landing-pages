@@ -51,9 +51,9 @@
           "alt": "A preview image of the landing pages website."
         },
         "buildSettings": {
-          "base": "/",
-          "dir": "/web/.next",
-          "cmd": "npm run build-web"
+          "base": "/web",
+          "dir": "/.next",
+          "cmd": "npm run build"
         },
         "dir": "./web",
         "requiredCorsOrigins": [
