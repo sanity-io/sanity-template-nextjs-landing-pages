@@ -1,7 +1,16 @@
 module.exports = {
-  extends: ['standard', 'standard-react', 'plugin:import/errors', 'plugin:import/warnings'],
+  extends: [
+    'next',
+    'standard',
+    'standard-react',
+    'prettier',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:react/recommended',
+  ],
   rules: {
     'object-curly-spacing': ['error', 'never'],
-    'comma-dangle': ['never'],
+    'comma-dangle': 0,
+    '@next/next/no-img-element': 0,
   },
 }
