@@ -4,7 +4,7 @@ import SimpleBlockContent from '../SimpleBlockContent'
 import styles from './TextSection.module.css'
 
 function TextSection(props) {
-  const { heading, label, text } = props
+  const {heading, label, text} = props
 
   return (
     <div className={styles.root}>

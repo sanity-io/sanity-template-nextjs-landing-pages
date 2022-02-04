@@ -4,14 +4,14 @@ import Link from 'next/link'
 import styles from './Cta.module.css'
 
 function cta(props) {
-  const { title, route, link } = props
+  const {title, route, link} = props
 
   if (route && route.slug && route.slug.current) {
     return (
       <Link
         href={{
           pathname: '/LandingPage',
-          query: { slug: route.slug.current },
+          query: {slug: route.slug.current},
         }}
         as={`/${route.slug.current}`}
       >

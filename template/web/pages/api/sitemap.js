@@ -1,9 +1,9 @@
 import groq from 'groq'
 import client from '../../client'
-import { slugToAbsUrl } from '../../utils/urls'
+import {slugToAbsUrl} from '../../utils/urls'
 
 export default async function handler(req, res) {
-  const { allRoutesSlugs, baseUrl } = await client.fetch(groq`{
+  const {allRoutesSlugs, baseUrl} = await client.fetch(groq`{
     // Get the slug of all routes that should be in the sitemap
     "allRoutesSlugs": *[
       _type == "route" &&

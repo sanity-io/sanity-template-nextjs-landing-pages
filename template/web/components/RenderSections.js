@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import * as SectionComponents from './sections'
 import capitalizeString from '../utils/capitalizeString'
@@ -16,7 +16,7 @@ function resolveSections(section) {
 }
 
 function RenderSections(props) {
-  const { sections } = props
+  const {sections} = props
 
   if (!sections) {
     console.error('Missing section')

@@ -21,7 +21,7 @@ const siteConfigQuery = `
   `
 
 class App extends BaseApp {
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({Component, ctx}) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -31,18 +31,18 @@ class App extends BaseApp {
     // Add site config from sanity
     return client.fetch(siteConfigQuery).then((config) => {
       if (!config) {
-        return { pageProps }
+        return {pageProps}
       }
       if (config && pageProps) {
         pageProps.config = config
       }
 
-      return { pageProps }
+      return {pageProps}
     })
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const {Component, pageProps} = this.props
     return <Component {...pageProps} />
   }
 }

@@ -9,7 +9,7 @@ import Cta from '../Cta'
 const builder = imageUrlBuilder(client)
 
 function ImageSection(props) {
-  const { heading, label, text, image, cta } = props
+  const {heading, label, text, image, cta} = props
 
   if (!image) {
     return null

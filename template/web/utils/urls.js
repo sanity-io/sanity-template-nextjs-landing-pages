@@ -4,7 +4,7 @@ function removeDoubleSlashes(path) {
 }
 
 // "contact/" => "/contact/"
-function getPathFromSlug(slug) {
+export function getPathFromSlug(slug) {
   return removeDoubleSlashes(`/${slug || ''}`)
 }
 
@@ -30,4 +30,16 @@ export function getSlugVariations(slug) {
     // /leading
     `/${slashless}`,
   ]
+}
+
+export function slugParamToPath(slugParam) {
+  // Possible slug value types:
+  const slug = Array.isArray(slugParam)
+    ? // - ["multiple", "paths"]
+      slugParam.join('/')
+    : // - "single-path"
+      slugParam ||
+      // - undefined -> default to "/"
+      '/'
+  return slug
 }

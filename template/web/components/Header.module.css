@@ -1,4 +1,4 @@
-@import "../styles/custom-media.css";
+@import '../styles/custom-media.css';
 
 .root {
   position: relative;
@@ -79,7 +79,7 @@
     background-color: var(--color-black, #000);
     color: var(--color-white, #fff);
 
-    @nest .root[data-show-nav="true"] & {
+    @nest .root[data-show-nav='true'] & {
       display: block;
     }
   }
@@ -96,14 +96,18 @@
     position: relative;
     padding: 1.5rem 0.5rem;
 
+    @nest &[data-is-active='true'] {
+      font-weight: bold;
+    }
+
     @media (--media-max-medium) {
       padding: 1rem 1.5rem;
       width: 100%;
       box-sizing: border-box;
       text-align: right;
 
-      @nest &[data-is-active="true"]::before {
-        content: "";
+      @nest &[data-is-active='true']::before {
+        content: '';
         width: 100%;
         height: 1px;
         position: absolute;
@@ -114,7 +118,7 @@
     }
   }
 
-  @nest .root[data-show-nav="true"] & > a[data-is-active="true"]::before {
+  @nest .root[data-show-nav='true'] & > a[data-is-active='true']::before {
     display: none;
   }
 

@@ -11,7 +11,7 @@ function urlFor(source) {
 }
 
 function Hero(props) {
-  const { heading, backgroundImage, tagline, ctas } = props
+  const {heading, backgroundImage, tagline, ctas} = props
 
   const style = backgroundImage
     ? {

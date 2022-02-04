@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import { withRouter } from 'next/router'
+import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
 import styles from './Header.module.css'
 import HamburgerIcon from './icons/Hamburger'
+import {getPathFromSlug, slugParamToPath} from '../utils/urls'
 
 class Header extends Component {
-  state = { showNav: false }
+  state = {showNav: false}
 
   static propTypes = {
     router: PropTypes.shape({
@@ -21,9 +22,7 @@ class Header extends Component {
     navItems: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        slug: PropTypes.shape({
-          current: PropTypes.string,
-        }).isRequired,
+        slug: PropTypes.arrayOf(PropTypes.string),
       })
     ),
     logo: PropTypes.shape({
@@ -35,21 +34,21 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    const { router } = this.props
+    const {router} = this.props
     router.events.on('routeChangeComplete', this.hideMenu)
   }
 
   componentWillUnmount() {
-    const { router } = this.props
+    const {router} = this.props
     router.events.off('routeChangeComplete', this.hideMenu)
   }
 
   hideMenu = () => {
-    this.setState({ showNav: false })
+    this.setState({showNav: false})
   }
 
   handleMenuToggle = () => {
-    const { showNav } = this.state
+    const {showNav} = this.state
     this.setState({
       showNav: !showNav,
     })
@@ -68,21 +67,13 @@ class Header extends Component {
   }
 
   render() {
-    const { title = 'Missing title', navItems, router, logo } = this.props
-    const { showNav } = this.state
+    const {title = 'Missing title', navItems, router, logo} = this.props
+    const {showNav} = this.state
 
     return (
       <div className={styles.root} data-show-nav={showNav}>
         <h1 className={styles.branding}>
-          <Link
-            href={{
-              pathname: '/LandingPage',
-              query: {
-                slug: '/',
-              },
-            }}
-            as="/"
-          >
+          <Link href={'/'}>
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
         </h1>
@@ -90,19 +81,14 @@ class Header extends Component {
           <ul className={styles.navItems}>
             {navItems &&
               navItems.map((item) => {
-                const { slug, title, _id } = item
-                const isActive =
-                  router.pathname === '/LandingPage' && router.query.slug === slug.current
+                const {slug, title, _id} = item
+                const isActive = slugParamToPath(router.query.slug) === slug.current
                 return (
                   <li key={_id} className={styles.navItem}>
-                    <Link
-                      href={{
-                        pathname: '/LandingPage',
-                        query: { slug: slug.current },
-                      }}
-                      as={`/${slug.current}`}
-                    >
-                      <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
+                    <Link href={getPathFromSlug(slug.current)}>
+                      <a data-is-active={isActive ? 'true' : 'false'} aria-current={isActive}>
+                        {title}
+                      </a>
                     </Link>
                   </li>
                 )
