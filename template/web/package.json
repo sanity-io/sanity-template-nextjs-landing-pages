@@ -11,14 +11,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "@portabletext/react": "^1.0.1",
-    "@sanity/client": "^2.23.2",
+    "@portabletext/react": "^1.0.2",
+    "@sanity/client": "^3.0.3",
     "@sanity/image-url": "^1.0.1",
     "@zeit/next-css": "^1.0.1",
     "groq": "^2.15.0",
     "lodash": "^4.17.21",
     "next": "^12.0.9",
-    "next-seo": "^5.0.0",
+    "next-seo": "^5.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-inlinesvg": "^2.3.0",
@@ -36,9 +36,9 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-standard": "^5.0.0",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.6",
     "postcss-import": "^14.0.2",
-    "postcss-preset-env": "^7.3.0",
+    "postcss-preset-env": "^7.3.1",
     "sitemap": "^2.1.0"
   }
 }
