@@ -9,7 +9,6 @@
   },
   "plugins": [
     "@sanity/base",
-    "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/dashboard",
@@ -18,6 +17,11 @@
     "dashboard-widget-document-list",
     "dashboard-widget-netlify"
   ],
+  "env": {
+    "development": {
+      "plugins": ["@sanity/vision"]
+    }
+  },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
