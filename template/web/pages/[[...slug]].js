@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo'
 import client from '../client'
 import Layout from '../components/Layout'
 import RenderSections from '../components/RenderSections'
-import getSlugVariations from '../utils/getSlugVariations'
+import { getSlugVariations } from '../utils/urls'
 
 const pageFragment = groq`
 ...,
