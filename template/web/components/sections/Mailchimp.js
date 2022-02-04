@@ -3,8 +3,8 @@ import React from 'react'
 import MailchimpForm from 'react-mailchimp-form'
 import styles from './Mailchimp.module.css'
 
-export default function Mailchimp (props) {
-  const {heading, subtitle, actionUrl} = props
+export default function Mailchimp(props) {
+  const { heading, subtitle, actionUrl } = props
 
   return (
     <section className={styles.root}>
@@ -20,23 +20,23 @@ export default function Mailchimp (props) {
                 placeholder: 'Email',
                 type: 'email',
                 className: styles.email,
-                required: true
-              }
+                required: true,
+              },
             ]}
             buttonClassName={styles.button}
             styles={{
               sendingMsg: {
-                color: '#0652DD'
+                color: '#0652DD',
               },
               successMsg: {
-                color: '#009432'
+                color: '#009432',
               },
               duplicateMsg: {
-                color: '#EE5A24'
+                color: '#EE5A24',
               },
               errorMsg: {
-                color: 'red'
-              }
+                color: 'red',
+              },
             }}
             messages={{
               sending: 'Sending...',
@@ -44,7 +44,7 @@ export default function Mailchimp (props) {
               error: 'An unexpected internal error has occurred.',
               empty: 'You must write an e-mail.',
               duplicate: 'Already subscribed',
-              button: 'Subscribe!'
+              button: 'Subscribe!',
             }}
             className={styles.form}
           />
@@ -57,5 +57,5 @@ export default function Mailchimp (props) {
 Mailchimp.propTypes = {
   heading: PropTypes.string,
   subtitle: PropTypes.string,
-  actionUrl: PropTypes.string
+  actionUrl: PropTypes.string,
 }
