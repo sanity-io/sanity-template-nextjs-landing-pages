@@ -51,3 +51,20 @@ jspm_packages
 
 # Static
 out
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# vercel
+.vercel
+.next
+
+public/studio/*
+studio/package-lock.json
+yarn.lock
+!studio/yarn.lock

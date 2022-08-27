@@ -10,36 +10,15 @@ export default {
     {
       name: 'project-info',
       options: {
-        __experimental_before: [
-          {
-            name: 'netlify',
-            options: {
-              description:
-                'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
-              sites: [
-                {
-                  buildHookId: '<#<deployments.studio.providerInfo.buildHookId>#>',
-                  title: 'Sanity Studio',
-                  name: '<#<deployments.studio.providerInfo.siteName>#>',
-                  apiId: '<#<deployments.studio.providerInfo.siteId>#>'
-                },
-                {
-                  buildHookId: '<#<deployments.web.providerInfo.buildHookId>#>',
-                  title: 'Landing pages Website',
-                  name: '<#<deployments.web.providerInfo.siteName>#>',
-                  apiId: '<#<deployments.web.providerInfo.siteId>#>'
-                }
-              ]
-            }
-          }
-        ],
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/<#<repository.owner>#>/<#<repository.name>#>',
+            value:'https://github.com/sanity-io/sanity-template-nextjs-landing-pages',
+            // @TODO revisit in v3 when this is as  simple as doing
+            // value: `https://${process.env.NEXT_PUBLIC_VERCEL_GIT_PROVIDER}.com/${process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER}/${NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG}`,
             category: 'Code'
           },
-          { title: 'Frontend', value: '<#<deployments.web.url>#>', category: 'apps' }
+          { title: 'Frontend', value: '/', category: 'apps' }
         ]
       }
     },

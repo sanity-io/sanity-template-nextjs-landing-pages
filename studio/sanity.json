@@ -1,11 +1,12 @@
 {
   "root": true,
   "project": {
-    "name": "<#< sanity.projectTitle >#>"
+    "name": "Next.js landing pages",
+    "basePath": "/studio"
   },
   "api": {
-    "projectId": "<#< sanity.projectId >#>",
-    "dataset": "<#< sanity.dataset >#>"
+    "projectId": "PLACEHOLDER_ENV_VARIABLES_WILL_HANDLE_FOR_US",
+    "dataset": "PLACEHOLDER_ENV_VARIABLES_WILL_HANDLE_FOR_US"
   },
   "plugins": [
     "@sanity/base",
@@ -14,8 +15,7 @@
     "@sanity/dashboard",
     "@sanity/desk-tool",
     "dashboard-widget-structure-menu",
-    "dashboard-widget-document-list",
-    "dashboard-widget-netlify"
+    "dashboard-widget-document-list"
   ],
   "env": {
     "development": {

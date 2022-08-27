@@ -1,19 +1,24 @@
-# Next.js landing pages
+# Next.js landing pages [![Prettier](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/prettier.yml/badge.svg?event=push)](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/prettier.yml) [![CI](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/ci.yml) ![Vercel](https://vercelbadge.vercel.app/api/sanity-io/sanity-template-nextjs-landing-pages)
 
 _SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
+
+The template contains both a Sanity Studio and a front-end in Next.js. Both are deployed on Netlify.
+
 
 Deployed your own with [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
 
 You can also deploy with Vercel:
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsanity-io%2Fsanity-template-nextjs-landing-pages&project-name=sanity-next-landing-pages&repository-name=sanity-next-landing-pages&demo-title=Next.js%20landing%20pages&demo-description=SEO%20friendly%20page%20builder%20in%20React.js.%20Heroes%2C%20sign-up%20forms%20and%20calls%20to%20action.&demo-url=https%3A%2F%2Ftemplate-nextjs-landing-page.sanity.build%2F&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fsanity-io%2Fsanity-template-nextjs-landing-pages%2F3ec5538849337ce2a7e231b180418ed2ff3dd20d%2Fassets%2Ffrontend.jpg&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsanity-io%2Fsanity-template-nextjs-blog-comments&project-name=sanity-next-blog-comments&repository-name=sanity-next-blog-comments&demo-title=Next.js%20Blog%20with%20Comments&demo-description=A%20Next.js%20%2B%20Sanity%20blog%20with%20comments%20stored%20in%20Studio%20via%20API%20routes.&demo-url=https%3A%2F%2Ftemplate-nextjs-blog-comments.sanity.build%2F&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fsanity-io%2Fsanity-template-nextjs-blog-comments%2Fmain%2F.sanity-template%2Fassets%2Fpreview-image.jpg&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx)
+
+![The Sanity.io and Next.js powered landing page website](/.sanity-template/assets/frontend.jpg?raw=true)
 
 ## What you have
 
 - A dynamic frontend with [Next.js](https://nextjs.org)
 - Structured content using [Sanity.io](https://www.sanity.io)
-- Global deployment on [Netlify](https://netlify.com)
+- Global deployment on [Vercel](https://vercel.com)
 
 ## Quick start
 
@@ -36,14 +41,6 @@ Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on tw
 
 
 
-
-This template repo is used by Sanity.io to easily create deployed and configured projects through a web interface. You can test it by [creating this project](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
-
-The template contains both a Sanity Studio and a front-end in Next.js. Both are deployed on Netlify.
-
-Want to make a template for Sanity and your favourite front-end framework? We’re still maturing [sanity.io/create](https://sanity.io/create) and our APIs, but do tell us about it on [slack.sanity.io](https://slack.sanity.io).
-
-![The Sanity.io and Next.js powered landing page website](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/blob/master/assets/frontend.jpg?raw=true)
 
 ## Local development
 
