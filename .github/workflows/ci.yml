@@ -1,0 +1,57 @@
+name: CI
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  # Allow manually dispatching the CI when outside of main branch
+  # https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
+  # https://github.com/sanity-io/semantic-release-preset/actions/workflows/ci.yml
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  next:
+    name: Next.js
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+      - uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm i -g vercel@latest
+      - run: vercel env pull --token=${{ secrets.VERCEL_TOKEN }}
+      - run: npm ci --ignore-scripts
+      - run: npm run build:web
+      - run: npm run lint --if-present
+      - run: npm run test --if-present
+
+  studio:
+    name: Studio
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./studio
+    steps:
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+      - uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
+        with:
+          node-version: lts/*
+          cache: yarn
+          cache-dependency-path: studio/yarn.lock
+      - run: yarn global add vercel
+      # We run env pull before install to avoid any dependency we might pull in from getting access to VERCEL_TOKEN
+      - run: vercel env pull .env.development --token=${{ secrets.VERCEL_TOKEN }}
+      - run: yarn install --frozen-lockfile
+      - run: npm run build --if-present
+      - run: npm run lint --if-present
+      - run: npm run test --if-present
