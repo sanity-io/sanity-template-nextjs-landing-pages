@@ -35,12 +35,12 @@ export default {
       subtitle: 'label',
       media: 'image',
     },
-    prepare({ heading, media }) {
+    prepare({heading, media}) {
       return {
         title: `Image: ${heading}`,
         subtitle: 'Image section',
         media,
-      };
+      }
     },
   },
-};
+}

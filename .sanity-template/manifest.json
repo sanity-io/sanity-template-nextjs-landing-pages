@@ -21,7 +21,7 @@
   ],
   "deployment": {
     "provider": "vercel",
-    "studio": { "basePath": "/studio" },
+    "studio": {"basePath": "/studio"},
     "corsOrigins": [
       {
         "origin": "http://localhost:3000",

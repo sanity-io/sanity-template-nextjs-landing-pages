@@ -1,4 +1,4 @@
-import { LinkIcon } from '@sanity/icons'
+import {LinkIcon} from '@sanity/icons'
 
 export default {
   name: 'route',
@@ -39,7 +39,7 @@ export default {
       slug: 'slug.current',
       pageTitle: 'page.title',
     },
-    prepare({ slug, pageTitle }) {
+    prepare({slug, pageTitle}) {
       return {
         title: slug === '/' ? '/' : `/${slug}`,
         subtitle: `Page: ${pageTitle}`,

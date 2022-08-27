@@ -13,11 +13,11 @@ if (__DEV__) {
   }
 }
 
-export function isSubscribable (thing) {
+export function isSubscribable(thing) {
   return thing && (typeof thing.then === 'function' || typeof thing.subscribe === 'function')
 }
 
-export function isStructure (structure) {
+export function isStructure(structure) {
   return (
     structure &&
     (typeof structure === 'function' ||
@@ -28,7 +28,7 @@ export function isStructure (structure) {
   )
 }
 
-export function serializeStructure (item, context, resolverArgs = []) {
+export function serializeStructure(item, context, resolverArgs = []) {
   // Lazy
   if (typeof item === 'function') {
     return serializeStructure(item(...resolverArgs), context, resolverArgs)
@@ -37,7 +37,7 @@ export function serializeStructure (item, context, resolverArgs = []) {
   // Promise/observable returning a function, builder or plain JSON structure
   if (isSubscribable(item)) {
     return observableFrom(item).pipe(
-      mergeMap(val => serializeStructure(val, context, resolverArgs))
+      mergeMap((val) => serializeStructure(val, context, resolverArgs))
     )
   }
 
@@ -50,19 +50,19 @@ export function serializeStructure (item, context, resolverArgs = []) {
   return observableOf(item)
 }
 
-export function getDefaultStructure () {
+export function getDefaultStructure() {
   const items = StructureBuilder.documentTypeListItems()
   return StructureBuilder.list()
     .id('__root__')
     .title('Content')
-    .showIcons(items.some(item => item.getSchemaType().icon))
+    .showIcons(items.some((item) => item.getSchemaType().icon))
     .items(items)
 }
 
 // We are lazy-requiring/resolving the structure inside of a function in order to catch errors
 // on the root-level of the module. Any loading errors will be caught and emitted as errors
 // eslint-disable-next-line complexity
-export function loadStructure () {
+export function loadStructure() {
   let structure
   try {
     const mod = require('part:@sanity/desk-tool/structure?') || getDefaultStructure()

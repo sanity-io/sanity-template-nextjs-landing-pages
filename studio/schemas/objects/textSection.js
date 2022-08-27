@@ -23,11 +23,11 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({ heading }) {
+    prepare({heading}) {
       return {
         title: `${heading}`,
         subtitle: 'Text section',
-      };
+      }
     },
   },
-};
+}
