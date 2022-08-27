@@ -22,7 +22,7 @@ function StructureMenuWidget(props) {
           const Icon = getIconComponent(item)
           return (
             <div key={item.id}>
-              <Link className={styles.link} href={`/desk/${item.id}`}>
+              <Link className={styles.link} href={`/studio/desk/${item.id}`}>
                 <div className={styles.iconWrapper}>
                   <Icon />
                 </div>

@@ -18,7 +18,11 @@ export default {
             // value: `https://${process.env.NEXT_PUBLIC_VERCEL_GIT_PROVIDER}.com/${process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER}/${NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG}`,
             category: 'Code',
           },
-          {title: 'Frontend', value: '/', category: 'apps'},
+          {
+            title: 'Frontend',
+            value: typeof document === 'undefined' ? '/' : location.origin,
+            category: 'apps',
+          },
         ],
       },
     },
