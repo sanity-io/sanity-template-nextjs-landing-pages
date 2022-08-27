@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       disallowRobots != true
     ].slug.current,
 
-    // And the base site URL 
+    // And the base site URL
     "baseUrl": *[_id == "global-config"][0].url,
   }`)
 
