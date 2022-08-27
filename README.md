@@ -1,8 +1,10 @@
 # Next.js landing pages [![Prettier](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/prettier.yml/badge.svg?event=push)](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/prettier.yml) [![CI](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/ci.yml) ![Vercel](https://vercelbadge.vercel.app/api/sanity-io/sanity-template-nextjs-landing-pages)
 
+### [Live demo](https://template-nextjs-landing-pages.sanity.build/)
+
 _SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
 
-The template contains both a Sanity Studio and a front-end in Next.js. Both are deployed on Netlify.
+The template contains both a Sanity Studio and a front-end in Next.js. Both are deployed on Vercel.
 
 Deployed your own with [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
 
@@ -18,18 +20,9 @@ You can also deploy with Vercel:
 - Structured content using [Sanity.io](https://www.sanity.io)
 - Global deployment on [Vercel](https://vercel.com)
 
-## Quick start
-
-1. Clone this repository
-2. `npm install` in the project root folder on local
-3. `npm run dev` to start the studio and frontend locally
-   - Your studio should be running on [http://localhost:3333](http://localhost:3333)
-   - Your frontend should be running on [http://localhost:3000](http://localhost:3000)
-4. `npm run build` to build to production locally
-
 ## Deploy changes
 
-Netlify automatically deploys new changes commited to master on GitHub. If you want to change deployment branch, do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
+Vercel automatically deploys new changes commited to master on GitHub. If you want to change deployment branch, do so in [Customizing the Production Branch on Verce;](https://vercel.com/docs/concepts/git#customizing-the-production-branch).
 
 ## Stuck? Get help
 
@@ -37,18 +30,42 @@ Netlify automatically deploys new changes commited to master on GitHub. If you w
 
 Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
 
-## Local development
+### Running the front-end
 
-You develop the templates in `/template`, and review your changes in `/build`.
+You'll need to create a `.env` file to store a few environment variables that Next will use to pull data from the Sanity API.
 
-1. **Install dependencies with `npm install` in the root folder.** This will install the template development tool that watches changes in the `/template` folder and output the template to `/build`.
+```dotenv
+NEXT_PUBLIC_SANITY_PROJECT_ID=<YOUR-PROJECT-ID>
+NEXT_PUBLIC_SANITY_DATASET=<YOUR-DATASET-NAME>
+SANITY_STUDIO_API_PROJECT_ID=<YOUR-PROJECT-ID>
+SANITY_STUDIO_API_DATASET=<YOUR-DATASET-NAME>
+```
 
-2. **Run `npm run dev` in root folder.** This will build the template files to `/build`. This is how the code will look for those who install the project later.
+For instance, your file should look like this:
 
-3. **Run `npm install` in `./build/web` and `sanity install` in `/build/studio`** This will install the necessary dependencies for the Next.js frontend and the Studio.
+```dotenv
+NEXT_PUBLIC_SANITY_PROJECT_ID=abcdefgh
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_STUDIO_API_PROJECT_ID=abcdefgh
+SANITY_STUDIO_API_DATASET=production
+```
 
-4. **Run `npm run dev` in `./build/web` and `sanity start` in `/build/studio`**. This will start the development servers for the Next.js frontend and Sanity Studio.
+To find these, visit https://manage.sanity.io
 
-## Notes
+The Project ID is displayed once you select your project. It is an alphanumeric 8-character string.
 
-When developing ProjectId and dataset name can be changed in `template-values-development.json`
+The dataset is the name of the dataset that you want to use. For instance "production".
+
+Once those env variables are in place, you can run the following commands to get Next's development server up and running:
+
+```bash
+npm install
+
+# Run the frontend
+npm run dev
+
+# Run the Studio
+npm run start:sanity
+```
+
+The blog will be running at `http://localhost:3000`, the Studio will run at `http://localhost:3333`.
