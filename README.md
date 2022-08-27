@@ -10,7 +10,7 @@ Deployed your own with [sanity.io/create](https://www.sanity.io/create/?template
 
 You can also deploy with Vercel:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsanity-io%2Fsanity-template-nextjs-landing-pages&project-name=sanity-next-landing-pages&repository-name=sanity-next-landing-pages&demo-title=Next.js%20landing%20pages&demo-description=SEO%20friendly%20page%20builder%20in%20React.js.%20Heroes%2C%20sign-up%20forms%20and%20calls%20to%20action.&demo-url=https%3A%2F%2Ftemplate-nextjs-landing-page.sanity.build%2F&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fsanity-io%2Fsanity-template-nextjs-landing-pages%2F3ec5538849337ce2a7e231b180418ed2ff3dd20d%2Fassets%2Ffrontend.jpg&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsanity-io%2Fsanity-template-nextjs-landing-pages&project-name=sanity-next-landing-pages&repository-name=sanity-next-landing-pages&demo-title=Next.js%20landing%20pages&demo-description=SEO%20friendly%20page%20builder%20in%20React.js.%20Heroes%2C%20sign-up%20forms%20and%20calls%20to%20action.&demo-url=https%3A%2F%2Ftemplate-nextjs-landing-pages.sanity.build%2F&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fsanity-io%2Fsanity-template-nextjs-landing-pages%2F3ec5538849337ce2a7e231b180418ed2ff3dd20d%2Fassets%2Ffrontend.jpg&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx)
 
 ![The Sanity.io and Next.js powered landing page website](/.sanity-template/assets/frontend.jpg?raw=true)
 
