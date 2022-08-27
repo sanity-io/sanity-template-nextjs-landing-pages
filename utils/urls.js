@@ -5,7 +5,7 @@ function removeDoubleSlashes(path) {
 
 // "contact/" => "/contact/"
 export function getPathFromSlug(slug) {
-  return removeDoubleSlashes(`/studio/${slug || ''}`)
+  return removeDoubleSlashes(`/${slug || ''}`)
 }
 
 // "/about" => "https://my-site.com/about"
