@@ -1,6 +1,41 @@
-# sanity-template-nextjs-landing-pages
+# Next.js landing pages
 
 _SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
+
+Deployed your own with [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
+
+You can also deploy with Vercel:
+
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsanity-io%2Fsanity-template-nextjs-blog-comments&project-name=sanity-next-blog-comments&repository-name=sanity-next-blog-comments&demo-title=Next.js%20Blog%20with%20Comments&demo-description=A%20Next.js%20%2B%20Sanity%20blog%20with%20comments%20stored%20in%20Studio%20via%20API%20routes.&demo-url=https%3A%2F%2Ftemplate-nextjs-blog-comments.sanity.build%2F&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fsanity-io%2Fsanity-template-nextjs-blog-comments%2Fmain%2F.sanity-template%2Fassets%2Fpreview-image.jpg&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx)
+
+## What you have
+
+- A dynamic frontend with [Next.js](https://nextjs.org)
+- Structured content using [Sanity.io](https://www.sanity.io)
+- Global deployment on [Netlify](https://netlify.com)
+
+## Quick start
+
+1. Clone this repository
+2. `npm install` in the project root folder on local
+3. `npm run dev` to start the studio and frontend locally
+   - Your studio should be running on [http://localhost:3333](http://localhost:3333)
+   - Your frontend should be running on [http://localhost:3000](http://localhost:3000)
+4. `npm run build` to build to production locally
+
+## Deploy changes
+
+Netlify automatically deploys new changes commited to master on GitHub. If you want to change deployment branch, do so in [build & deploy settings on Netlify](https://www.netlify.com/docs/continuous-deployment/#branches-deploys).
+
+## Stuck? Get help
+
+[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
+
+Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
+
+
+
 
 This template repo is used by Sanity.io to easily create deployed and configured projects through a web interface. You can test it by [creating this project](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
 
