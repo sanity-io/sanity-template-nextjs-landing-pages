@@ -1,27 +1,71 @@
-# sanity-template-nextjs-landing-pages
+# Next.js landing pages [![Prettier](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/prettier.yml/badge.svg?event=push)](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/prettier.yml) [![CI](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/actions/workflows/ci.yml) ![Vercel](https://vercelbadge.vercel.app/api/sanity-io/sanity-template-nextjs-landing-pages)
+
+### [Live demo](https://template-nextjs-landing-pages.sanity.build/)
 
 _SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
 
-This template repo is used by Sanity.io to easily create deployed and configured projects through a web interface. You can test it by [creating this project](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
+The template contains both a Sanity Studio and a front-end in Next.js. Both are deployed on Vercel.
 
-The template contains both a Sanity Studio and a front-end in Next.js. Both are deployed on Netlify.
+Deployed your own with [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nextjs-landing-pages).
 
-Want to make a template for Sanity and your favourite front-end framework? We’re still maturing [sanity.io/create](https://sanity.io/create) and our APIs, but do tell us about it on [slack.sanity.io](https://slack.sanity.io).
+You can also deploy with Vercel:
 
-![The Sanity.io and Next.js powered landing page website](https://github.com/sanity-io/sanity-template-nextjs-landing-pages/blob/master/assets/frontend.jpg?raw=true)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsanity-io%2Fsanity-template-nextjs-landing-pages&project-name=sanity-next-landing-pages&repository-name=sanity-next-landing-pages&demo-title=Next.js%20landing%20pages&demo-description=SEO%20friendly%20page%20builder%20in%20React.js.%20Heroes%2C%20sign-up%20forms%20and%20calls%20to%20action.&demo-url=https%3A%2F%2Ftemplate-nextjs-landing-pages.sanity.build%2F&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fsanity-io%2Fsanity-template-nextjs-landing-pages%2F3ec5538849337ce2a7e231b180418ed2ff3dd20d%2Fassets%2Ffrontend.jpg&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx)
 
-## Local development
+![The Sanity.io and Next.js powered landing page website](/.sanity-template/assets/frontend.jpg?raw=true)
 
-You develop the templates in `/template`, and review your changes in `/build`.
+## What you have
 
-1. **Install dependencies with `npm install` in the root folder.** This will install the template development tool that watches changes in the `/template` folder and output the template to `/build`.
+- A dynamic frontend with [Next.js](https://nextjs.org)
+- Structured content using [Sanity.io](https://www.sanity.io)
+- Global deployment on [Vercel](https://vercel.com)
 
-2. **Run `npm run dev` in root folder.** This will build the template files to `/build`. This is how the code will look for those who install the project later.
+## Deploy changes
 
-3. **Run `npm install` in `./build/web` and `sanity install` in `/build/studio`** This will install the necessary dependencies for the Next.js frontend and the Studio.
+Vercel automatically deploys new changes commited to master on GitHub. If you want to change deployment branch, do so in [Customizing the Production Branch on Verce;](https://vercel.com/docs/concepts/git#customizing-the-production-branch).
 
-4. **Run `npm run dev` in `./build/web` and `sanity start` in `/build/studio`**. This will start the development servers for the Next.js frontend and Sanity Studio.
+## Stuck? Get help
 
-## Notes
+[![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
 
-When developing ProjectId and dataset name can be changed in `template-values-development.json`
+Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
+
+### Running the front-end
+
+You'll need to create a `.env` file to store a few environment variables that Next will use to pull data from the Sanity API.
+
+```dotenv
+NEXT_PUBLIC_SANITY_PROJECT_ID=<YOUR-PROJECT-ID>
+NEXT_PUBLIC_SANITY_DATASET=<YOUR-DATASET-NAME>
+SANITY_STUDIO_API_PROJECT_ID=<YOUR-PROJECT-ID>
+SANITY_STUDIO_API_DATASET=<YOUR-DATASET-NAME>
+```
+
+For instance, your file should look like this:
+
+```dotenv
+NEXT_PUBLIC_SANITY_PROJECT_ID=abcdefgh
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_STUDIO_API_PROJECT_ID=abcdefgh
+SANITY_STUDIO_API_DATASET=production
+```
+
+To find these, visit https://manage.sanity.io
+
+The Project ID is displayed once you select your project. It is an alphanumeric 8-character string.
+
+The dataset is the name of the dataset that you want to use. For instance "production".
+
+Once those env variables are in place, you can run the following commands to get Next's development server up and running:
+
+```bash
+npm install
+
+# Run the frontend
+npm run dev
+
+# Run the Studio
+npm run start:sanity
+```
+
+The blog will be running at `http://localhost:3000`, the Studio will run at `http://localhost:3333`.

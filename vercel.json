@@ -1,7 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "github": { "silent": true, "autoJobCancelation": true },
-  "rewrites": [
-    { "source": "/studio/(.*)", "destination": "/studio/index.html" }
-  ]
+  "github": {"silent": true, "autoJobCancelation": true},
+  "rewrites": [{"source": "/studio/(.*)", "destination": "/studio/index.html"}]
 }

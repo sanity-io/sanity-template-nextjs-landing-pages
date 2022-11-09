@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npx @sanity/cli build ../public/studio -y",
+    "env": "cp ../.env .env.development",
+    "prestart": "npm run env",
+    "start": "npx @sanity/cli start",
+    "test": "npx @sanity/cli check"
+  },
+  "dependencies": {
+    "@sanity/base": "^2.26.0",
+    "@sanity/core": "^2.26.0",
+    "@sanity/dashboard": "^2.26.0",
+    "@sanity/default-layout": "^2.26.0",
+    "@sanity/default-login": "^2.26.0",
+    "@sanity/desk-tool": "^2.26.0",
+    "@sanity/studio-hints": "^2.24.1",
+    "@sanity/vision": "^2.26.0",
+    "bcp47": "^1.1.2",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@sanity/cli": "^2.26.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.8.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "prettier-eslint-cli": "^5.0.1"
+  }
+}

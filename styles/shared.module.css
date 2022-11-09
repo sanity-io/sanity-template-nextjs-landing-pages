@@ -1,0 +1,32 @@
+@import './custom-media.css';
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  margin: 0 1rem;
+
+  @media (--typography-breakpoint) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.normal-container {
+  composes: container;
+
+  @media (--typography-breakpoint) {
+    max-width: var(--wide-container, 60rem);
+  }
+}
+
+.narrow-container {
+  composes: container;
+
+  @media (--typography-breakpoint) {
+    max-width: var(--narrow-container, 30rem);
+  }
+}
